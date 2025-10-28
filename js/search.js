@@ -91,12 +91,12 @@ function renderSearchRestaurantCard(restaurant, container) {
                 <div class="platform-info ${recommendedPlatform === 'meituan' ? 'recommended' : ''}">
                     <div class="platform-name">美团</div>
                     <div class="price">¥${restaurant.prices.meituan.current}</div>
-                    <div class="original-price">¥${restaurant.prices.meituan.original}</div>
+                    <div class="minimum-order">起送¥${restaurant.minimumOrder.meituan}</div>
                 </div>
                 <div class="platform-info ${recommendedPlatform === 'ele' ? 'recommended' : ''}">
                     <div class="platform-name">饿了么</div>
                     <div class="price">¥${restaurant.prices.ele.current}</div>
-                    <div class="original-price">¥${restaurant.prices.ele.original}</div>
+                    <div class="minimum-order">起送¥${restaurant.minimumOrder.ele}</div>
                 </div>
             </div>
         </div>

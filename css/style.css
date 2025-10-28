@@ -354,6 +354,13 @@ header {
   color: var(--primary-color);
 }
 
+/* 起送价格样式 */
+.minimum-order {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 4px;
+}
+
 /* 搜索页面样式 */
 .search-container {
   display: flex;
@@ -704,13 +711,6 @@ footer {
   color: var(--primary-color);
 }
 
-.original-price {
-  display: block;
-  font-size: 14px;
-  color: #718096;
-  text-decoration: line-through;
-}
-
 .dishes-list {
   display: flex;
   flex-direction: column;
@@ -720,7 +720,7 @@ footer {
 .dish-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 12px;
   background-color: var(--light-bg);
   border-radius: 6px;
@@ -731,9 +731,28 @@ footer {
   background-color: #e2e8f0;
 }
 
+.dish-info {
+  flex: 1;
+}
+
 .dish-name {
   font-weight: 500;
   color: var(--secondary-color);
+}
+
+.dish-recommendation {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 4px;
+}
+
+.platform-tag {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 .dish-price {
@@ -845,4 +864,92 @@ footer {
   margin-bottom: 15px;
   font-size: 18px;
   color: var(--secondary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recommend-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* 轮播图响应式 */
+  .carousel {
+    height: 200px;
+  }
+
+  .carousel-caption {
+    font-size: 14px;
+    padding: 8px 15px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .recommend-list {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel {
+    height: 150px;
+  }
+
+  .carousel-caption {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* 在现有的@media规则中添加 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-header {
+    padding: 15px;
+  }
+
+  .modal-footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-badge {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
 }
