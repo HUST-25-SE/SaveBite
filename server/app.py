@@ -1,10 +1,10 @@
 # app.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from FoodPriceDB import FoodPriceDB
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../static')
 CORS(app)  # 允许跨域（开发阶段）
 
 # 初始化数据库
@@ -182,7 +182,12 @@ def compare_dish():
     success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
-# ========== 启动 ==========
 
+
+
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
+# ========== 启动 ==========
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
