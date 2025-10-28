@@ -1,0 +1,955 @@
+/* 本文件主要用于格式调整，觉得哪里不好看可以微调一下 */
+
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #2d3748;
+  --light-bg: #f7fafc;
+  --border-color: #e2e8f0;
+  --text-color: #4a5568;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 头部样式 */
+header {
+  background-color: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: var(--primary-color);
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.login-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: #e55a2b;
+}
+
+.logout-btn {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background: var(--light-bg);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* 页面容器 */
+.page {
+  display: none;
+  min-height: calc(100vh - 200px);
+  padding: 30px 0;
+}
+
+.page.active {
+  display: block;
+}
+
+/* 轮播图样式 */
+.carousel {
+  position: relative;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--text-color);
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+  background-color: white;
+}
+
+/* 推荐栏样式 */
+.section-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s;
+}
+
+.refresh-btn:hover {
+  background: var(--light-bg);
+  border-color: var(--primary-color);
+}
+
+.recommend-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* 餐厅卡片通用样式 */
+.restaurant-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-image {
+  height: 160px;
+  background-color: #e2e8f0;
+  background-size: cover;
+  background-position: center;
+}
+
+.restaurant-info {
+  padding: 15px;
+}
+
+.restaurant-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.favorite-btn.active {
+  color: #ff6b35;
+}
+
+.restaurant-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #718096;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stars {
+  color: #ffc107;
+}
+
+.platform-comparison {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.platform-info {
+  text-align: center;
+  flex: 1;
+}
+
+.platform-name {
+  font-size: 12px;
+  color: #718096;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+/* 起送价格样式 */
+.minimum-order {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 4px;
+}
+
+/* 搜索页面样式 */
+.search-container {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  flex: 1;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 30px 0 0 30px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.search-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  padding: 0 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: #e55a2b;
+}
+
+/* 登录页面样式 */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #e55a2b;
+}
+
+.login-tips {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #718096;
+}
+
+/* 空状态样式 */
+.empty-state {
+  text-align: center;
+  padding: 50px 0;
+  color: #718096;
+}
+
+.empty-state i {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #cbd5e0;
+}
+
+/* 认证标签页样式 */
+.auth-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab-btn:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+}
+
+/* 认证表单样式 */
+.auth-form {
+  display: none;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+/* 页脚 */
+footer {
+  background: var(--secondary-color);
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #cbd5e0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #4a5568;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+/* 模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--primary-color);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.restaurant-info-section {
+  margin-bottom: 20px;
+}
+
+.restaurant-info-section .restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.restaurant-details i {
+  width: 16px;
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.platform-prices {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.platform-prices h3,
+.popular-dishes h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: var(--secondary-color);
+}
+
+.price-comparison {
+  display: flex;
+  gap: 15px;
+}
+
+.price-item {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.price-item.recommended {
+  border-color: var(--primary-color);
+  background-color: rgba(255, 107, 53, 0.05);
+}
+
+.platform-name {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.current-price {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.dishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px;
+  background-color: var(--light-bg);
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.dish-item:hover {
+  background-color: #e2e8f0;
+}
+
+.dish-info {
+  flex: 1;
+}
+
+.dish-name {
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.dish-recommendation {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 4px;
+}
+
+.platform-tag {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.dish-price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.modal-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.favorite-btn-modal {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favorite-btn-modal:hover {
+  background: #e55a2b;
+}
+
+.favorite-btn-modal.active {
+  background: #718096;
+}
+
+.favorite-btn-modal.active:hover {
+  background: #4a5568;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+
+  .price-comparison {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* 推荐平台居中显示 */
+.platform-prices .price-comparison {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.platform-prices .price-item {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.platform-prices {
+  text-align: center;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .platform-prices .price-item {
+    min-width: 180px;
+    max-width: 250px;
+  }
+}
+
+/* 推荐平台样式 */
+.recommended-platform {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.platform-badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+}
+
+.platform-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+/* 调整推荐平台区域间距 */
+.platform-prices {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.platform-prices h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recommend-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* 轮播图响应式 */
+  .carousel {
+    height: 200px;
+  }
+
+  .carousel-caption {
+    font-size: 14px;
+    padding: 8px 15px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .recommend-list {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel {
+    height: 150px;
+  }
+
+  .carousel-caption {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* 在现有的@media规则中添加 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-header {
+    padding: 15px;
+  }
+
+  .modal-footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-badge {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+}
