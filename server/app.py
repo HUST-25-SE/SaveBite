@@ -12,6 +12,9 @@ db = FoodPriceDB()
 db_path = os.getenv("DB_PATH", "food_price.db")
 if not db.initialize(db_path):
     raise RuntimeError("数据库初始化失败")
+if not db.initialize_test_data():
+    print("测试数据初始化失败")
+    exit(1)
 
 # 工具函数：从请求头获取用户 ID（简化版，正式应使用 JWT）
 def get_user_id_from_request():
