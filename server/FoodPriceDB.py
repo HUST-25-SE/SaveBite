@@ -12,7 +12,6 @@ class FoodPriceDB:
         self.local = threading.local()
 
     def initialize(self, db_path: str = "food_price.db") -> bool:
-        """初始化数据库，创建所有表"""
         with self.lock:
             if self.initialized:
                 return True
@@ -22,7 +21,7 @@ class FoodPriceDB:
                 conn = sqlite3.connect(db_path)
                 cursor = conn.cursor()
 
-                # 用户表
+                # 用户表（不变）
                 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS users (
                     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +32,7 @@ class FoodPriceDB:
                 )
                 ''')
 
-                # 平台表
+                # 平台表（不变）
                 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS platforms (
                     platform_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,7 +41,7 @@ class FoodPriceDB:
                 )
                 ''')
 
-                # 店铺表
+                # 店铺表：添加联合唯一约束
                 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS shops (
                     shop_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -56,11 +55,12 @@ class FoodPriceDB:
                     min_order REAL DEFAULT 0,
                     avg_consumption REAL DEFAULT 0,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (platform_id) REFERENCES platforms(platform_id) ON DELETE CASCADE
+                    FOREIGN KEY (platform_id) REFERENCES platforms(platform_id) ON DELETE CASCADE,
+                    UNIQUE(platform_id, shop_name)  -- ← 关键：同平台店铺名唯一
                 )
                 ''')
 
-                # 优惠券表
+                # 优惠券表（不变）
                 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS coupons (
                     coupon_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -74,7 +74,7 @@ class FoodPriceDB:
                 )
                 ''')
 
-                # 菜品表
+                # 菜品表：添加联合唯一约束
                 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS dishes (
                     dish_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -82,11 +82,12 @@ class FoodPriceDB:
                     dish_name TEXT NOT NULL,
                     price REAL NOT NULL,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (shop_id) REFERENCES shops(shop_id) ON DELETE CASCADE
+                    FOREIGN KEY (shop_id) REFERENCES shops(shop_id) ON DELETE CASCADE,
+                    UNIQUE(shop_id, dish_name)  -- ← 关键：同店铺菜品名唯一
                 )
                 ''')
 
-                # 用户收藏表
+                # 收藏表（主键已保证唯一）
                 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS user_favorites (
                     user_id INTEGER NOT NULL,
@@ -400,11 +401,41 @@ class FoodPriceDB:
                 return (False, f"添加失败: {e}")
         return self._retry_operation(operation)
 
-    def compare_dish_price(self, dish_name: str) -> Tuple[bool, List[Dict[str, Any]]]:
+    def compare_dish_price(
+        self, 
+        dish_name: str, 
+        shop_name: Optional[str] = None,   # ← 新增参数
+        exact: bool = True                 # 默认精确匹配
+    ) -> Tuple[bool, List[Dict[str, Any]]]:
+        """
+        比价指定菜品（可选指定店铺名）
+        
+        Args:
+            dish_name: 菜品名称
+            shop_name: （可选）店铺名称。若提供，则只比该店铺在各平台的价格
+            exact: 是否精确匹配菜品名（默认True）
+        """
         def operation():
             cursor = self._get_thread_cursor()
             try:
-                query = '''
+                # 构建 WHERE 条件
+                conditions = []
+                params = []
+
+                if exact:
+                    conditions.append("d.dish_name = ?")
+                    params.append(dish_name)
+                else:
+                    conditions.append("d.dish_name LIKE ?")
+                    params.append(f"%{dish_name}%")
+
+                if shop_name:
+                    conditions.append("s.shop_name = ?")
+                    params.append(shop_name)
+
+                where_clause = " AND ".join(conditions)
+
+                query = f'''
                 SELECT 
                     d.dish_name,
                     d.price AS dish_price,
@@ -418,7 +449,7 @@ class FoodPriceDB:
                 JOIN shops s ON d.shop_id = s.shop_id
                 JOIN platforms p ON s.platform_id = p.platform_id
                 LEFT JOIN coupons c ON s.shop_id = c.shop_id
-                WHERE d.dish_name LIKE ?
+                WHERE {where_clause}
                 ORDER BY 
                     CASE 
                         WHEN (d.price + s.delivery_fee) >= IFNULL(c.condition_amount, 999999)
@@ -426,7 +457,7 @@ class FoodPriceDB:
                         ELSE (d.price + s.delivery_fee)
                     END ASC
                 '''
-                cursor.execute(query, (f"%{dish_name}%",))
+                cursor.execute(query, params)
                 results = []
                 for row in cursor.fetchall():
                     total = row['dish_price'] + row['delivery_fee']
@@ -459,41 +490,93 @@ class FoodPriceDB:
 
         return self._retry_operation(operation)
 
+    def clear_all_data(self) -> bool:
+        """
+        清空所有业务数据（保留表结构）
+        按外键依赖顺序删除，避免约束冲突
+        """
+        def operation():
+            cursor = self._get_thread_cursor()
+            try:
+                # 1. 先删子表（依赖最多的）
+                cursor.execute("DELETE FROM user_favorites")
+                cursor.execute("DELETE FROM dishes")
+                cursor.execute("DELETE FROM coupons")
+                
+                # 2. 再删父表
+                cursor.execute("DELETE FROM shops")
+                cursor.execute("DELETE FROM users")
+                
+                # 3. 平台表保留（因为 initialize 会自动插入默认平台）
+                # cursor.execute("DELETE FROM platforms")
+
+                self._get_thread_connection().commit()
+                print("✅ 所有业务数据已清空")
+                return True
+            except Exception as e:
+                print(f"清空数据失败: {e}")
+                return False
+
+        try:
+            return self._retry_operation(operation)
+        except Exception as e:
+            print(f"清空操作异常: {e}")
+            return False
+
+
     def initialize_test_data(self) -> bool:
         def operation():
-            # 添加测试用户
+            # 添加用户（重复会失败，但 register_user 已处理）
             self.register_user("alice", "alice@example.com", "123456")
             self.register_user("bob", "bob@example.com", "123456")
 
-            # 获取用户ID（简化：直接查）
+            # 获取用户ID
             cursor = self._get_thread_cursor()
             cursor.execute("SELECT user_id FROM users WHERE username = 'alice'")
             alice_id = cursor.fetchone()['user_id']
 
-            # 添加店铺
-            success, msg, shop1_id = self.add_shop(
-                "美团", "张亮麻辣烫(中关村店)", rating=4.7, delivery_fee=3.0, min_order=20.0
+            # 添加店铺（重复插入会因 UNIQUE 约束失败，add_shop 会返回 False，我们忽略）
+            self.add_shop(
+                "美团", "张亮麻辣烫(中关村店)",
+                rating=4.7, delivery_fee=3.0, min_order=20.0,
+                monthly_sales=1200, avg_consumption=35.0
             )
-            if not success: return False
-
-            success, msg, shop2_id = self.add_shop(
-                "饿了么", "张亮麻辣烫(中关村店)", rating=4.6, delivery_fee=2.5, min_order=20.0
+            self.add_shop(
+                "饿了么", "张亮麻辣烫(中关村店)",
+                rating=4.6, delivery_fee=2.5, min_order=20.0,
+                monthly_sales=980, avg_consumption=32.0
             )
-            if not success: return False
 
-            # 添加满减
-            self.add_coupon(shop1_id, 30, 5)
-            self.add_coupon(shop2_id, 25, 6)
+            # 获取店铺ID（必须查，因为 add_shop 可能没插入）
+            cursor.execute("""
+                SELECT s.shop_id 
+                FROM shops s 
+                JOIN platforms p ON s.platform_id = p.platform_id 
+                WHERE s.shop_name = ? AND p.platform_name = ?
+            """, ("张亮麻辣烫(中关村店)", "美团"))
+            shop1_id = cursor.fetchone()['shop_id']
 
-            # 添加菜品
+            cursor.execute("""
+                SELECT s.shop_id 
+                FROM shops s 
+                JOIN platforms p ON s.platform_id = p.platform_id 
+                WHERE s.shop_name = ? AND p.platform_name = ?
+            """, ("张亮麻辣烫(中关村店)", "饿了么"))
+            shop2_id = cursor.fetchone()['shop_id']
+
+            # 添加菜品（重复会失败，但无害）
             self.add_dish(shop1_id, "麻辣烫（微辣）", 28.0)
             self.add_dish(shop2_id, "麻辣烫（微辣）", 29.5)
 
-            # Alice 收藏两个店铺
+            # 添加满减（可允许多条，或你也可加唯一约束，此处不做）
+            self.add_coupon(shop1_id, 30, 5)
+            self.add_coupon(shop2_id, 25, 6)
+
+            # 收藏（重复会因主键冲突失败，add_favorite 会返回 False）
             self.add_favorite(alice_id, shop1_id)
             self.add_favorite(alice_id, shop2_id)
 
-            print("测试数据（含用户和收藏）添加成功！")
+            print("测试数据已确保存在（重复插入被数据库阻止）")
             return True
 
         try:
@@ -511,6 +594,8 @@ if __name__ == "__main__":
     if not db.initialize("food_price.db"):
         print("数据库初始化失败")
         exit(1)
+        
+    db.clear_all_data()
 
     if not db.initialize_test_data():
         print("测试数据初始化失败")
@@ -530,7 +615,7 @@ if __name__ == "__main__":
 
     # 比价
     print("\n" + "="*60)
-    success, results = db.compare_dish_price("麻辣烫")
+    success, results = db.compare_dish_price("麻辣烫",shop_name = '张亮麻辣烫(中关村店)' ,exact=False)
     if success:
         print("\n【麻辣烫比价结果】")
         for r in results:
