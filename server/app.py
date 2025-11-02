@@ -135,6 +135,7 @@ def search_restaurants():
     keyword = request.args.get('keyword', '').strip()
     if not keyword:
         return jsonify({"success": True, "restaurants": []})
+
     conn = db._get_thread_connection()
     cursor = conn.cursor()
     cursor.execute("""
@@ -143,32 +144,78 @@ def search_restaurants():
         FROM shops s
         JOIN platforms p ON s.platform_id = p.platform_id
         WHERE s.shop_name LIKE ?
-        ORDER BY s.rating DESC
-        LIMIT 20
+        ORDER BY s.shop_name, p.platform_name  -- 便于后续按名称分组
     """, (f"%{keyword}%",))
+
     rows = cursor.fetchall()
-    results = []
+
+    # 按 shop_name 聚合同名店铺
+    from collections import defaultdict
+    grouped = defaultdict(list)
     for row in rows:
+        grouped[row["shop_name"]].append(row)
+
+    results = []
+    for shop_name, platforms in grouped.items():
+        # 初始化默认值
+        meituan_data = None
+        ele_data = None
+
+        for p in platforms:
+            if p["platform_name"] == "美团":
+                meituan_data = p
+            elif p["platform_name"] == "饿了么":
+                ele_data = p
+
+        # 评分：取两个平台中较高的（或平均，这里按高分优先）
+        rating = max(
+            meituan_data["rating"] if meituan_data else 0,
+            ele_data["rating"] if ele_data else 0
+        ) or 4.5
+
+        # 月销量：取两者之和（或最大值，这里建议求和更合理）
+        monthly_sales = (meituan_data["monthly_sales"] if meituan_data else 0) + \
+                        (ele_data["monthly_sales"] if ele_data else 0) or 100
+
+        # 起送价
+        min_order_meituan = meituan_data["min_order"] if meituan_data else None
+        min_order_ele = ele_data["min_order"] if ele_data else None
+
+        # 价格示例（可根据实际需求调整）
+        price_meituan = min_order_meituan + 10 if min_order_meituan else None
+        price_ele = min_order_ele + 8 if min_order_ele else None
+
+        # 主 ID：可以用美团的 shop_id（如果存在），否则用饿了么的
+        main_id = meituan_data["shop_id"] if meituan_data else (ele_data["shop_id"] if ele_data else 0)
+
         results.append({
-            "id": row["shop_id"],
-            "name": row["shop_name"],
-            "rating": row["rating"] or 4.5,
-            "reviews": row["monthly_sales"] or 100,
-            "distance": "1.2km",
-            "deliveryTime": "30-40分钟",
-            "deliveryFee": f"¥{row['delivery_fee']}",
+            "id": main_id,  # 注意：前端如需区分平台，可能需要额外字段
+            "name": shop_name,
+            "rating": rating,
+            "reviews": monthly_sales,
+            "distance": "1.2km",  # 你可能需要从数据库补充实际距离
+            "deliveryTime": "30-40分钟",  # 同上，建议未来从数据库取
+            "deliveryFee": {
+                "meituan": f"¥{meituan_data['delivery_fee']}" if meituan_data else None,
+                "ele": f"¥{ele_data['delivery_fee']}" if ele_data else None
+            },
             "minimumOrder": {
-                "meituan": row["min_order"],
-                "ele": row["min_order"]
+                "meituan": min_order_meituan,
+                "ele": min_order_ele
             },
-            "image": "https://via.placeholder.com/300x160?text=" + row["shop_name"],
+            "image": f"https://via.placeholder.com/300x160?text={shop_name}",
             "prices": {
-                "meituan": {"current": row["min_order"] + 10},
-                "ele": {"current": row["min_order"] + 8}
+                "meituan": {"current": price_meituan} if price_meituan is not None else None,
+                "ele": {"current": price_ele} if price_ele is not None else None
             },
-            "isFavorite": False,  # 前端可后续调用收藏状态接口
+            "isFavorite": False,  # 前端后续可调用接口获取
             "dishes": []
         })
+
+    # 按评分排序（降序），再按月销量
+    results.sort(key=lambda x: (-x["rating"], -x["reviews"]))
+    results = results[:20]  # 限制最多20条
+
     return jsonify({"success": True, "restaurants": results})
 
 # ========== 比价接口（可选） ==========
