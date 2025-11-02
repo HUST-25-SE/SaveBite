@@ -200,19 +200,19 @@ def search_restaurants():
         min_order_meituan = meituan_data["min_order"] if meituan_data else None
         min_order_ele = ele_data["min_order"] if ele_data else None
 
-        # === 计算两个平台的菜品总价 ===
-        total_meituan = None
-        total_ele = None
+        # === 计算两个平台的菜品均价 ===
+        avg_meituan = None
+        avg_ele = None
 
         if meituan_data:
             mt_dishes = dish_map.get(meituan_data["shop_id"], [])
             if mt_dishes:
-                total_meituan = round(sum(d["price"] for d in mt_dishes), 2)
+                avg_meituan = round(sum(d["price"] for d in mt_dishes) / len(mt_dishes), 2)
 
         if ele_data:
             ele_dishes = dish_map.get(ele_data["shop_id"], [])
             if ele_dishes:
-                total_ele = round(sum(d["price"] for d in ele_dishes), 2)
+                avg_ele = round(sum(d["price"] for d in ele_dishes) / len(ele_dishes), 2)
 
         distance_val = main_shop["delivery_distance"] or 1.2
         distance_str = f"{distance_val:.1f}km"
@@ -259,8 +259,8 @@ def search_restaurants():
             },
             "image": f"https://via.placeholder.com/300x160?text={shop_name}",
             "prices": {
-                "meituan": {"current": total_meituan} if total_meituan is not None else None,
-                "ele": {"current": total_ele} if total_ele is not None else None
+                "meituan": {"current": avg_meituan} if avg_meituan is not None else None,
+                "ele": {"current": avg_ele} if avg_ele is not None else None
             },
             "isFavorite": False,
             "dishes": dishes_list
