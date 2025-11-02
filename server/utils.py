@@ -21,7 +21,7 @@ def load_data_from_json(db: 'FoodPriceDB', json_path: str) -> bool:
 
     # 1. 导入用户
     for user in data.get("users", []):
-        ok, msg = db.register_user(
+        ok, userid, msg = db.register_user(
             username=user["username"],
             email=user["email"],
             password=user["password"]
