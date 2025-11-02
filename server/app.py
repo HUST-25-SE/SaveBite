@@ -255,8 +255,8 @@ def search_restaurants():
             },
             "image": f"https://via.placeholder.com/300x160?text={shop_name}",
             "prices": {
-                "meituan": {"current": price_meituan} if price_meituan is not None else "0.0",
-                "ele": {"current": price_ele} if price_ele is not None else "0.0"
+                "meituan": {"current": price_meituan} if price_meituan is not None else None,
+                "ele": {"current": price_ele} if price_ele is not None else None
             },
             "isFavorite": False,
             "dishes": dishes_list

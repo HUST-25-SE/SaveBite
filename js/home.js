@@ -182,10 +182,18 @@ function showRestaurantDetails(restaurant) {
   const dishesList = document.getElementById('dishesList');
   dishesList.innerHTML = '';
   (restaurant.dishes || []).forEach(dish => {
-    const dishMeituan = dish.prices?.meituan || 999;
-    const dishEle = dish.prices?.ele || 999;
+    // 🔧 修复：正确读取菜品价格（字段在顶层，不是 prices 下）
+    const dishMeituan = dish.meituan != null ? parseFloat(dish.meituan) : Infinity;
+    const dishEle = dish.ele != null ? parseFloat(dish.ele) : Infinity;
+
+    // 如果两个平台都没有价格，跳过
+    if (dishMeituan === Infinity && dishEle === Infinity) {
+      return;
+    }
+
     const bestPrice = Math.min(dishMeituan, dishEle);
     const plat = dishMeituan <= dishEle ? '美团' : '饿了么';
+
     const dishEl = document.createElement('div');
     dishEl.className = 'dish-item';
     dishEl.innerHTML = `
@@ -193,7 +201,7 @@ function showRestaurantDetails(restaurant) {
         <div class="dish-name">${dish.name}</div>
         <div class="dish-recommendation">推荐在 <span class="platform-tag">${plat}</span> 购买</div>
       </div>
-      <div class="dish-price">¥${bestPrice}</div>
+      <div class="dish-price">¥${bestPrice.toFixed(2)}</div>
     `;
     dishesList.appendChild(dishEl);
   });
@@ -208,7 +216,6 @@ function showRestaurantDetails(restaurant) {
 
   modal.style.display = 'block';
 }
-
 // 首页初始化
 function initHomePage() {
   initCarousel();
