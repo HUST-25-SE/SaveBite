@@ -140,16 +140,16 @@ def search_restaurants():
     cursor = conn.cursor()
     cursor.execute("""
         SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
+               s.delivery_distance, s.delivery_time,
                p.platform_name
         FROM shops s
         JOIN platforms p ON s.platform_id = p.platform_id
         WHERE s.shop_name LIKE ?
-        ORDER BY s.shop_name, p.platform_name  -- 便于后续按名称分组
+        ORDER BY s.shop_name, p.platform_name
     """, (f"%{keyword}%",))
 
     rows = cursor.fetchall()
 
-    # 按 shop_name 聚合同名店铺
     from collections import defaultdict
     grouped = defaultdict(list)
     for row in rows:
@@ -157,7 +157,6 @@ def search_restaurants():
 
     results = []
     for shop_name, platforms in grouped.items():
-        # 初始化默认值
         meituan_data = None
         ele_data = None
 
@@ -167,34 +166,47 @@ def search_restaurants():
             elif p["platform_name"] == "饿了么":
                 ele_data = p
 
-        # 评分：取两个平台中较高的（或平均，这里按高分优先）
         rating = max(
             meituan_data["rating"] if meituan_data else 0,
             ele_data["rating"] if ele_data else 0
         ) or 4.5
 
-        # 月销量：取两者之和（或最大值，这里建议求和更合理）
         monthly_sales = (meituan_data["monthly_sales"] if meituan_data else 0) + \
                         (ele_data["monthly_sales"] if ele_data else 0) or 100
 
-        # 起送价
         min_order_meituan = meituan_data["min_order"] if meituan_data else None
         min_order_ele = ele_data["min_order"] if ele_data else None
 
-        # 价格示例（可根据实际需求调整）
         price_meituan = min_order_meituan + 10 if min_order_meituan else None
         price_ele = min_order_ele + 8 if min_order_ele else None
 
-        # 主 ID：可以用美团的 shop_id（如果存在），否则用饿了么的
-        main_id = meituan_data["shop_id"] if meituan_data else (ele_data["shop_id"] if ele_data else 0)
+        # 选择主店铺数据（用于 distance 和 deliveryTime）
+        main_shop = meituan_data if meituan_data else ele_data
+        if not main_shop:
+            continue  # 理论上不会发生，但安全起见
+
+        # 格式化 distance：保留1位小数，单位 km
+        distance_val = main_shop["delivery_distance"] or 1.2
+        distance_str = f"{distance_val:.1f}km"
+
+        # 格式化 delivery_time
+        delivery_time_val = main_shop["delivery_time"]
+        if delivery_time_val is not None:
+            # 假设 delivery_time 存的是平均时间，比如 35 → "30-40分钟"
+            # 你可以根据业务调整范围，这里简单用 ±5 分钟
+            low = max(10, delivery_time_val - 5)
+            high = delivery_time_val + 5
+            delivery_time_str = f"{low}-{high}分钟"
+        else:
+            delivery_time_str = "30-40分钟"  # fallback
 
         results.append({
-            "id": main_id,  # 注意：前端如需区分平台，可能需要额外字段
+            "id": main_shop["shop_id"],
             "name": shop_name,
             "rating": rating,
             "reviews": monthly_sales,
-            "distance": "1.2km",  # 你可能需要从数据库补充实际距离
-            "deliveryTime": "30-40分钟",  # 同上，建议未来从数据库取
+            "distance": distance_str,
+            "deliveryTime": delivery_time_str,
             "deliveryFee": {
                 "meituan": f"¥{meituan_data['delivery_fee']}" if meituan_data else None,
                 "ele": f"¥{ele_data['delivery_fee']}" if ele_data else None
@@ -208,13 +220,12 @@ def search_restaurants():
                 "meituan": {"current": price_meituan} if price_meituan is not None else None,
                 "ele": {"current": price_ele} if price_ele is not None else None
             },
-            "isFavorite": False,  # 前端后续可调用接口获取
+            "isFavorite": False,
             "dishes": []
         })
 
-    # 按评分排序（降序），再按月销量
     results.sort(key=lambda x: (-x["rating"], -x["reviews"]))
-    results = results[:20]  # 限制最多20条
+    results = results[:20]
 
     return jsonify({"success": True, "restaurants": results})
 
