@@ -1,0 +1,4104 @@
+{ "users": [],
+  "platforms": [
+    {
+      "platform_name": "美团"
+    },
+    {
+      "platform_name": "饿了么"
+    }
+  ],
+  "shops": [
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "delivery_distance": 2.0,
+      "rating": 4.8,
+      "delivery_time": 45,
+      "delivery_fee": 0.9,
+      "monthly_sales": 3000,
+      "min_order": 0,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "delivery_distance": 5.8,
+      "rating": 4.8,
+      "delivery_time": 42,
+      "delivery_fee": 2.4,
+      "monthly_sales": 400,
+      "min_order": 20,
+      "avg_consumption": 21
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "delivery_distance": 4.4,
+      "rating": 4.0,
+      "delivery_time": 40,
+      "delivery_fee": 1.0,
+      "monthly_sales": 100,
+      "min_order": 30,
+      "avg_consumption": 23
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "delivery_distance": 1.1,
+      "rating": 4.8,
+      "delivery_time": 15,
+      "delivery_fee": 1.2,
+      "monthly_sales": 2000,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "delivery_distance": 2.3,
+      "rating": 4.8,
+      "delivery_time": 35,
+      "delivery_fee": 0.0,
+      "monthly_sales": 1000,
+      "min_order": 18,
+      "avg_consumption": 17
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "delivery_distance": 1.4,
+      "rating": 4.9,
+      "delivery_time": 15,
+      "delivery_fee": 0.0,
+      "monthly_sales": 1000,
+      "min_order": 15,
+      "avg_consumption": 15
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "delivery_distance": 0.539,
+      "rating": 4.7,
+      "delivery_time": 15,
+      "delivery_fee": 0.0,
+      "monthly_sales": 1000,
+      "min_order": 0,
+      "avg_consumption": 16
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "delivery_distance": 2.7,
+      "rating": 5.0,
+      "delivery_time": 34,
+      "delivery_fee": 0.0,
+      "monthly_sales": 500,
+      "min_order": 20,
+      "avg_consumption": 18
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "delivery_distance": 1.1,
+      "rating": 4.7,
+      "delivery_time": 15,
+      "delivery_fee": 0.0,
+      "monthly_sales": 5000,
+      "min_order": 25,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "delivery_distance": 1.4,
+      "rating": 4.9,
+      "delivery_time": 15,
+      "delivery_fee": 0.0,
+      "monthly_sales": 400,
+      "min_order": 18,
+      "avg_consumption": 18
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "delivery_distance": 0.85,
+      "rating": 4.8,
+      "delivery_time": 15,
+      "delivery_fee": 0.0,
+      "monthly_sales": 2000,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "delivery_distance": 1.5,
+      "rating": 4.4,
+      "delivery_time": 30,
+      "delivery_fee": 3.0,
+      "monthly_sales": 700,
+      "min_order": 20,
+      "avg_consumption": 31
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "delivery_distance": 1.5,
+      "rating": 4.9,
+      "delivery_time": 50,
+      "delivery_fee": 1.0,
+      "monthly_sales": 900,
+      "min_order": 18,
+      "avg_consumption": 18
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "delivery_distance": 1.3,
+      "rating": 4.9,
+      "delivery_time": 15,
+      "delivery_fee": 0.0,
+      "monthly_sales": 1000,
+      "min_order": 20,
+      "avg_consumption": 14
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "delivery_distance": 2.7,
+      "rating": 4.8,
+      "delivery_time": 35,
+      "delivery_fee": 0.0,
+      "monthly_sales": 2000,
+      "min_order": 0,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "delivery_distance": 2.7,
+      "rating": 4.9,
+      "delivery_time": 31,
+      "delivery_fee": 0.0,
+      "monthly_sales": 2000,
+      "min_order": 0,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "delivery_distance": 4.6,
+      "rating": 4.7,
+      "delivery_time": 33,
+      "delivery_fee": 0.6,
+      "monthly_sales": 2000,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "delivery_distance": 4.4,
+      "rating": 5.0,
+      "delivery_time": 37,
+      "delivery_fee": 2.0,
+      "monthly_sales": 600,
+      "min_order": 20,
+      "avg_consumption": 33
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "delivery_distance": 4.4,
+      "rating": 5.0,
+      "delivery_time": 37,
+      "delivery_fee": 2.0,
+      "monthly_sales": 600,
+      "min_order": 20,
+      "avg_consumption": 33
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "delivery_distance": 4.8,
+      "rating": 4.6,
+      "delivery_time": 40,
+      "delivery_fee": 0.0,
+      "monthly_sales": 2000,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "delivery_distance": 2.2,
+      "rating": 4.7,
+      "delivery_time": 48,
+      "delivery_fee": 1.2,
+      "monthly_sales": 2800,
+      "min_order": 0,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "delivery_distance": 6.0,
+      "rating": 4.7,
+      "delivery_time": 45,
+      "delivery_fee": 2.8,
+      "monthly_sales": 350,
+      "min_order": 20,
+      "avg_consumption": 21
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "delivery_distance": 4.6,
+      "rating": 4.1,
+      "delivery_time": 43,
+      "delivery_fee": 1.3,
+      "monthly_sales": 80,
+      "min_order": 30,
+      "avg_consumption": 23
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "delivery_distance": 1.3,
+      "rating": 4.7,
+      "delivery_time": 18,
+      "delivery_fee": 1.5,
+      "monthly_sales": 1800,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "delivery_distance": 2.5,
+      "rating": 4.7,
+      "delivery_time": 38,
+      "delivery_fee": 0.5,
+      "monthly_sales": 900,
+      "min_order": 18,
+      "avg_consumption": 17
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "delivery_distance": 1.6,
+      "rating": 4.8,
+      "delivery_time": 18,
+      "delivery_fee": 0.5,
+      "monthly_sales": 900,
+      "min_order": 15,
+      "avg_consumption": 15
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "delivery_distance": 0.6,
+      "rating": 4.6,
+      "delivery_time": 18,
+      "delivery_fee": 0.5,
+      "monthly_sales": 900,
+      "min_order": 0,
+      "avg_consumption": 16
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "delivery_distance": 2.9,
+      "rating": 4.9,
+      "delivery_time": 37,
+      "delivery_fee": 0.5,
+      "monthly_sales": 400,
+      "min_order": 20,
+      "avg_consumption": 18
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "delivery_distance": 1.3,
+      "rating": 4.6,
+      "delivery_time": 18,
+      "delivery_fee": 0.5,
+      "monthly_sales": 4500,
+      "min_order": 25,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "delivery_distance": 1.6,
+      "rating": 4.8,
+      "delivery_time": 18,
+      "delivery_fee": 0.5,
+      "monthly_sales": 350,
+      "min_order": 18,
+      "avg_consumption": 18
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "delivery_distance": 0.95,
+      "rating": 4.7,
+      "delivery_time": 18,
+      "delivery_fee": 0.5,
+      "monthly_sales": 1800,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "delivery_distance": 1.7,
+      "rating": 4.3,
+      "delivery_time": 33,
+      "delivery_fee": 3.5,
+      "monthly_sales": 600,
+      "min_order": 20,
+      "avg_consumption": 31
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "delivery_distance": 1.7,
+      "rating": 4.8,
+      "delivery_time": 55,
+      "delivery_fee": 1.5,
+      "monthly_sales": 800,
+      "min_order": 18,
+      "avg_consumption": 18
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "delivery_distance": 1.5,
+      "rating": 4.8,
+      "delivery_time": 18,
+      "delivery_fee": 0.5,
+      "monthly_sales": 900,
+      "min_order": 20,
+      "avg_consumption": 14
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "delivery_distance": 2.9,
+      "rating": 4.7,
+      "delivery_time": 38,
+      "delivery_fee": 0.5,
+      "monthly_sales": 1800,
+      "min_order": 0,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "delivery_distance": 2.9,
+      "rating": 4.8,
+      "delivery_time": 34,
+      "delivery_fee": 0.5,
+      "monthly_sales": 1800,
+      "min_order": 0,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "delivery_distance": 4.8,
+      "rating": 4.6,
+      "delivery_time": 36,
+      "delivery_fee": 1.0,
+      "monthly_sales": 1800,
+      "min_order": 20,
+      "avg_consumption": 0
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "delivery_distance": 4.6,
+      "rating": 4.9,
+      "delivery_time": 40,
+      "delivery_fee": 2.5,
+      "monthly_sales": 500,
+      "min_order": 20,
+      "avg_consumption": 33
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "delivery_distance": 4.6,
+      "rating": 4.9,
+      "delivery_time": 40,
+      "delivery_fee": 2.5,
+      "monthly_sales": 500,
+      "min_order": 20,
+      "avg_consumption": 33
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "delivery_distance": 5.0,
+      "rating": 4.5,
+      "delivery_time": 43,
+      "delivery_fee": 0.5,
+      "monthly_sales": 1800,
+      "min_order": 20,
+      "avg_consumption": 0
+    }
+  ],
+  "dishes": [
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "红烧土豆牛肉拌饭",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "蛋黄牛肉拌饭【满油蛋黄酱】",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "香酥鸡排牛肉拌饭",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "原味牛肉拌饭+荷包蛋一个",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "蛋黄牛肉拌饭+丸子1个+牛骨清汤",
+      "price": 25.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "蟹黄牛肉拌饭+可乐",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "酸菜牛肉拌饭【酸爽的开胃饭】",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "西红柿牛肉拌饭【恋爱的味道】",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "原味牛肉拌饭+啵啵肠3粒+牛骨清汤",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "老式烧烤饭",
+      "price": 26.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "全肉烧烤手抓大猪排套餐",
+      "price": 23.08
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "虎口夺食之肉条现烤小酥肉套餐",
+      "price": 22.19
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "碳烤鸡翅拌饭",
+      "price": 30.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "炭烤鸡腿肉饭+多种烤时蔬",
+      "price": 23.71
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "烤卤肉肠+多种时蔬",
+      "price": 23.38
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "碳烤香脆五花肉拌饭+多种烤时蔬",
+      "price": 26.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "两荤任选 + 多种烤时蔬",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "自选老式烧烤双拼拌饭",
+      "price": 27.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "手撕肉肉",
+      "price": 21.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "牛气冲天",
+      "price": 27.41
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "腊味十足",
+      "price": 28.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰味椰奶酥",
+      "price": 13.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰式蘸酱炸薯条",
+      "price": 12.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国海苔章鱼饼",
+      "price": 17.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国炸鱼饼",
+      "price": 17.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "芒果糯米饭虾饼套餐",
+      "price": 23
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选单人餐】芒果糯米饭超值A套餐",
+      "price": 20.1
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选双人餐】芒果糯米饭双人套餐",
+      "price": 33.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选单人餐】芒果糯米饭超值B套餐",
+      "price": 27.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选单人餐】芒芒甜蜜组合",
+      "price": 30.1
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国咖喱鸡肉饭",
+      "price": 27.2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰式辣红咖喱鸡肉饭",
+      "price": 27.2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国芒果糯米饭",
+      "price": 24.2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国海苔虾饼",
+      "price": 17.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国鲜虾片",
+      "price": 17.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭二件套",
+      "price": 23
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "吉味双拼饭",
+      "price": 22.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌双人餐",
+      "price": 50.6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "唐扬鸡块(两粒)",
+      "price": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭(特)",
+      "price": 26.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "随心选四件套A",
+      "price": 24.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "黄金猪排丼",
+      "price": 14
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭(三倍肉)",
+      "price": 33.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉皿(不含米饭)",
+      "price": 17.58
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "黄金猪排咖喱饭",
+      "price": 25.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "豪华双人餐",
+      "price": 82.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "随心选三件套A",
+      "price": 28.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭(标准碗)",
+      "price": 25.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "吉米花",
+      "price": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+猪肉烧卖+黑米粥+红油榨菜丝",
+      "price": 31.2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "招牌鲜肉小笼包(2笼)+五香茶叶蛋",
+      "price": 21
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包(8只)+鲜肉蒸饺(8只)",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "小笼包8只+薄皮小馄饨1份",
+      "price": 26.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "杭州小笼包套餐",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包(2笼)",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包8只+茶叶蛋",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+白米粥(无糖)+茶叶蛋",
+      "price": 20.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包8只+重口味酸辣小馄",
+      "price": 21
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+小米粥(微甜)+茶叶蛋",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+紫菜蛋花汤+茶叶蛋",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包8只+黑米粥(微甜)+茶叶蛋",
+      "price": 21
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【双倍快乐】4个生煎+4个锅贴",
+      "price": 20.24
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【三拼】鲜肉灌汤2个+虾仁2个+锅贴",
+      "price": 20.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "单人套餐:招牌生煎包6个+红枣米",
+      "price": 19.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "1-2人美味生煎包(8个生煎+2杯红)",
+      "price": 27.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【单人套餐】招牌生煎包4个+招牌灌",
+      "price": 22.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【自选双拼】招牌生煎包8个",
+      "price": 27.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【一人食】6个生煎+6个锅贴",
+      "price": 27.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "招牌灌汤锅贴饺子6个+麻辣牛肉生",
+      "price": 27.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【全家福】鲜肉3个/虾仁3个/麻辣",
+      "price": 29.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【超满足】8个生煎+8个锅贴",
+      "price": 31.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "麻辣牛肉生煎1个",
+      "price": 4.92
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "麻辣虾仁牛肉生煎1个",
+      "price": 5.92
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】任意拼(七选二)",
+      "price": 24.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】羊肉馅/牛肉馅(15+15)",
+      "price": 24.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】韭菜鲜肉/猪肉白菜(二选一)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞24个】任意拼(七选二)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】猪肉三鲜/猪肉芹菜(二选一)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞18个】牛肉馅/羊肉馅(9+9)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞18个】任意拼(七选二)",
+      "price": 21.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞24个】羊肉馅/牛肉馅(二选一)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞18个】猪肉香菇/芹菜鲜肉(二选一)",
+      "price": 19.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】猪肉香菇",
+      "price": 22.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包(两笼) 套餐",
+      "price": 24.19
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包+鲜肉蒸饺",
+      "price": 24.59
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包+现磨豆浆+茶叶蛋一枚",
+      "price": 19.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "特色鲜肉小笼包8个",
+      "price": 9.84
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "小笼包+馄饨(紫菜味)+茶叶蛋",
+      "price": 27.18
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "特色鲜肉蒸饺9个",
+      "price": 9.84
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "特色黄金煎包8",
+      "price": 14.78
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "【严选双人套餐】小笼包+小笼包+酸辣",
+      "price": 21.08
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小馄饨(紫菜味)",
+      "price": 11.35
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包+重口味酸辣馄饨",
+      "price": 25.19
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "黄金煎饺9个",
+      "price": 10.62
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "现磨豆浆(热)",
+      "price": 3.78
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "重口味酸辣馄饨15只",
+      "price": 16.79
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "香辣鸡腿堡双堡8件套双人餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "咔滋薯条(中份)",
+      "price": 14.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "香辣鸡腿堡豪华随心选",
+      "price": 49.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "脆爽双鸡堡超满足4件套",
+      "price": 30.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "拌饭家族随心选套餐(3件套)",
+      "price": 22
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "双层脆鸡堡四件套",
+      "price": 26.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "脆皮手枪腿快乐轻享餐",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "榴莲双响炮鸡腿堡3件套",
+      "price": 25.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "一桶都是鸡腿(5根装)",
+      "price": 36.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "炸鸡小食盒5件套",
+      "price": 36.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "榴莲双响炮脆皮鸡腿堡欢聚7件套",
+      "price": 45.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "手枪腿2选1+青果酥+饮料2选1随心选2件套",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "咔滋薯条(中份)2件5折套餐",
+      "price": 14.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "香辣鸡腿堡双堡8件套劲省50.1元套餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "脆爽双鸡堡超大满足4件套",
+      "price": 30.7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "招牌排骨肉条双拼(超大份超值半斤)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "招牌排骨肉条双拼(大份)+吮指盐酥鸡",
+      "price": 30.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "招牌桥头秘制排骨(超大份)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "网红锅巴土豆",
+      "price": 6.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "排骨肉条双拼(大份)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "排骨肉条双拼(大份)+椒盐杏鲍菇",
+      "price": 27.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头秘制肉条(大份)",
+      "price": 21.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头排骨(大份)+肉",
+      "price": 23.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头秘制排骨(大份)",
+      "price": 23.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头秘制肉条(超大份)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "秘制绝味掌中宝超大份",
+      "price": 16.99
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【券包专享】牛鱼虾堡双主食4件套",
+      "price": 23.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "两堡一卷豪华随心配套餐",
+      "price": 29.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "双堡翅根桶10件套套餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】大薯条",
+      "price": 16
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】鸡排堡",
+      "price": 17
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】鸡排堡+大薯条+中可",
+      "price": 27
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】超值单人5件套",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】华华翅根桶(6个)",
+      "price": 18.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】招牌全鸡",
+      "price": 20.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】香辣鸡腿堡+鸡排堡",
+      "price": 27.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】香辣鸡翅",
+      "price": 17
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】经典吃鸡4件套",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "咸甜快乐双人餐套餐",
+      "price": 49.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "麦辣卷堡5件套随心选",
+      "price": 39.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "安格斯厚牛堡四件套",
+      "price": 44.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "安格斯厚牛堡任选",
+      "price": 34
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "大堡口福四件套(培根芝士双牛堡)",
+      "price": 34.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "大堡口福四件套(Hold不住鸡排堡)",
+      "price": 34.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "四拼小食餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "牛肉小包(1笼10个)+卤鸡蛋1人套",
+      "price": 22.4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "招牌手工牛肉小包(1笼10个)",
+      "price": 20.4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工牛肉小包(5个)",
+      "price": 19.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工牛肉小包(8个)+卤鸡蛋",
+      "price": 19.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "爽口凉面+牛肉小包(4个)",
+      "price": 18.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "酱牛肉凉皮",
+      "price": 16.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "酱牛肉凉面",
+      "price": 16.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工凉皮+牛肉小包(4个)",
+      "price": 18.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工烧麦(4个)",
+      "price": 7.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工凉皮",
+      "price": 9.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "招牌牛肉小包(4个)",
+      "price": 7.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "牛肉小包(1笼10个)+米酒",
+      "price": 9.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "爽口凉面",
+      "price": 9.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "麻辣鸡丝凉面",
+      "price": 9.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "红油牛肉小笼包 +土猪鲜肉小笼包",
+      "price": 22.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "红油牛肉小笼包(1笼7个)",
+      "price": 13.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "牛肉、猪肉双拼包(8个)",
+      "price": 13.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "红油牛肉小笼包一笼+杂粮小米粥+红",
+      "price": 22.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "皮蛋瘦肉粥+杂粮小米粥+土猪鲜肉",
+      "price": 21.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "养生八宝粥(现熬杯装)",
+      "price": 6.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "杂粮小米粥(现熬杯装)",
+      "price": 5.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "老汉口烧麦(4个)",
+      "price": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "鲜土猪肉小笼包一笼+皮蛋瘦肉粥",
+      "price": 19.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "老汉口三鲜豆皮(小)",
+      "price": 11.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "土猪鲜肉小笼包(1笼7个)",
+      "price": 12.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "人气王!皮蛋瘦肉粥(现熬杯装)",
+      "price": 8.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "鲜土猪肉小笼包一笼+八宝粥+卤鸡蛋",
+      "price": 19.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "冰镇绿豆沙",
+      "price": 5.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "冰镇酸梅汤",
+      "price": 5.5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "土猪鲜肉小笼包(2笼)+养胃白米粥2",
+      "price": 24.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "2+2随心选超值套餐",
+      "price": 27.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "1+1随心选超值套餐",
+      "price": 27.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "小食超值随心选",
+      "price": 3.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "芝士火鸡焗意面(特辣)",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "牛肉卷意面管饱套餐1+1+1",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "一人食意面小吃套餐1+1+1",
+      "price": 31.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "芝士卷任选1+意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "【美味浓汤】主食随心选套餐",
+      "price": 31.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "黑椒牛肉意面",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "番茄肉酱芝士意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "奶油蘑菇芝士意面",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "【山姆上校单人超值管饱】1+1+1自选套餐",
+      "price": 20.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【肉多多】鸡排&鳕鱼排茄汁肉酱意面",
+      "price": 20.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【招牌牛牛牛】经典厚切黑椒牛排意面",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【口碑爆棚】板烧鸡腿肉番茄肉酱意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【人气推荐】香煎厚切黑椒法式烤排意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【能量满足】鸡肉拼香肠番茄肉酱意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【墙烈推荐】肉柳爆火意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【严选单人餐】肉柳拼培根黑椒意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【品质单人餐】牛排拼鸡排茄汁肉酱意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【韩式火鸡辣】慢熬火辣鸡肉意面",
+      "price": 20.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【肌肉满满】香脆鸡排番茄肉酱意面",
+      "price": 20.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "【新品上市】8英寸现烤蓝莓果酱披萨",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "【新品特惠】8英寸现烤香肠披萨",
+      "price": 22.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤新奥尔良烤鸡肉披萨",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸新奥尔良烤鸡肉披萨",
+      "price": 24.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤泰国金枕榴莲果肉披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤意式肉酱披萨",
+      "price": 22.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤金枕纯榴莲果肉披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤巴西孜然烤肉披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤意式肉酱披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤墨西哥牛肉披萨(辣)",
+      "price": 22.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤咸蛋黄风味芝士披萨",
+      "price": 22.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤火腿培根披萨",
+      "price": 22.9
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄麻辣龙虾仁拌面(20只)",
+      "price": 33.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄拌面+10颗蟹腿肉(去壳)+10只麻辣龙虾仁",
+      "price": 59.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "【蟹黄多多】蟹黄蟹肉大碗拌面",
+      "price": 20.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄大碗拌面+蚝仔煎蛋+10只麻辣龙虾仁",
+      "price": 32.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄大碗拌面+2个火箭鱿鱼+随机茶饮",
+      "price": 28.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "【超级大礼包】鲍鱼3个+青虾仁3个",
+      "price": 6.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "Q弹小海参3只",
+      "price": 11.38
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "吃一口鲜蟹(2个半只熟)",
+      "price": 4.38
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "香酥蝴蝶虾3只",
+      "price": 5.38
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "椒麻小酥肉",
+      "price": 5.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "单加龙虾仁一份10个(单点不配送)",
+      "price": 11.08
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "单加蟹腿肉1份(10个)",
+      "price": 13.88
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "奶油肉酱意面",
+      "price": 23.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "黑椒牛柳意面",
+      "price": 24.12
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "番茄牛柳意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "茄汁虾仁意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "火鸡风味香肠意面",
+      "price": 20.25
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "黑椒香肠意面",
+      "price": 19.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "火鸡风味鸡肉意面",
+      "price": 17.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "番茄鸡肉意面",
+      "price": 19.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "素菜意面(不加肉)",
+      "price": 17
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "黑椒鸡肉意面",
+      "price": 19.85
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "番茄香肠意面",
+      "price": 19.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油香肠意面",
+      "price": 17.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油鸡肉意面",
+      "price": 17.8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "意式肉酱意面",
+      "price": 21
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油牛柳意面",
+      "price": 24.3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油炒牛肉",
+      "price": 24.3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "黑椒牛排土豆泥沙拉",
+      "price": 26
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "厚切牛排鲜蔬沙拉",
+      "price": 26
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "牛肉炒饭一人食套餐",
+      "price": 33
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "黑胡椒传奇牛排套餐",
+      "price": 47
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "黑椒牛排鲜蔬沙拉",
+      "price": 23
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "嘟嘟童趣牛排儿童套餐",
+      "price": 38
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "热销双人牛排套餐",
+      "price": 104
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "沙朗牛排套餐",
+      "price": 44
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "招牌双拼套餐",
+      "price": 47
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "红酒菲力风味牛排套餐",
+      "price": 40
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "dish_name": "招牌牛肉饭双人套餐",
+      "price": 47
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "红烧土豆牛肉拌饭",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "蛋黄牛肉拌饭【满油蛋黄酱】",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "香酥鸡排牛肉拌饭",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "原味牛肉拌饭+荷包蛋一个",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "蛋黄牛肉拌饭+丸子1个+牛骨清汤",
+      "price": 25.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "蟹黄牛肉拌饭+可乐",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "酸菜牛肉拌饭【酸爽的开胃饭】",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "西红柿牛肉拌饭【恋爱的味道】",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "dish_name": "原味牛肉拌饭+啵啵肠3粒+牛骨清汤",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "老式烧烤饭",
+      "price": 26.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "全肉烧烤手抓大猪排套餐",
+      "price": 23.08
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "虎口夺食之肉条现烤小酥肉套餐",
+      "price": 22.19
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "碳烤鸡翅拌饭",
+      "price": 30.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "炭烤鸡腿肉饭+多种烤时蔬",
+      "price": 23.71
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "烤卤肉肠+多种时蔬",
+      "price": 23.38
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "碳烤香脆五花肉拌饭+多种烤时蔬",
+      "price": 26.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "两荤任选 + 多种烤时蔬",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "自选老式烧烤双拼拌饭",
+      "price": 27.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "手撕肉肉",
+      "price": 21.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "牛气冲天",
+      "price": 27.41
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "dish_name": "腊味十足",
+      "price": 28.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰味椰奶酥",
+      "price": 13.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰式蘸酱炸薯条",
+      "price": 12.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国海苔章鱼饼",
+      "price": 17.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国炸鱼饼",
+      "price": 17.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "芒果糯米饭虾饼套餐",
+      "price": 23
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选单人餐】芒果糯米饭超值A套餐",
+      "price": 20.1
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选双人餐】芒果糯米饭双人套餐",
+      "price": 33.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选单人餐】芒果糯米饭超值B套餐",
+      "price": 27.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "【严选单人餐】芒芒甜蜜组合",
+      "price": 30.1
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国咖喱鸡肉饭",
+      "price": 27.2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰式辣红咖喱鸡肉饭",
+      "price": 27.2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国芒果糯米饭",
+      "price": 24.2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国海苔虾饼",
+      "price": 17.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "dish_name": "泰国鲜虾片",
+      "price": 17.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭二件套",
+      "price": 23
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "吉味双拼饭",
+      "price": 22.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌双人餐",
+      "price": 50.6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "唐扬鸡块(两粒)",
+      "price": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭(特)",
+      "price": 26.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "随心选四件套A",
+      "price": 24.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "黄金猪排丼",
+      "price": 14
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭(三倍肉)",
+      "price": 33.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉皿(不含米饭)",
+      "price": 17.58
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "黄金猪排咖喱饭",
+      "price": 25.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "豪华双人餐",
+      "price": 82.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "随心选三件套A",
+      "price": 28.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "招牌牛肉饭(标准碗)",
+      "price": 25.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "吉米花",
+      "price": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+猪肉烧卖+黑米粥+红油榨菜丝",
+      "price": 31.2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "招牌鲜肉小笼包(2笼)+五香茶叶蛋",
+      "price": 21
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包(8只)+鲜肉蒸饺(8只)",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "小笼包8只+薄皮小馄饨1份",
+      "price": 26.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "杭州小笼包套餐",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包(2笼)",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包8只+茶叶蛋",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+白米粥(无糖)+茶叶蛋",
+      "price": 20.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包8只+重口味酸辣小馄",
+      "price": 21
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+小米粥(微甜)+茶叶蛋",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包+紫菜蛋花汤+茶叶蛋",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "dish_name": "鲜肉小笼包8只+黑米粥(微甜)+茶叶蛋",
+      "price": 21
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【双倍快乐】4个生煎+4个锅贴",
+      "price": 20.24
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【三拼】鲜肉灌汤2个+虾仁2个+锅贴",
+      "price": 20.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "单人套餐:招牌生煎包6个+红枣米",
+      "price": 19.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "1-2人美味生煎包(8个生煎+2杯红)",
+      "price": 27.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【单人套餐】招牌生煎包4个+招牌灌",
+      "price": 22.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【自选双拼】招牌生煎包8个",
+      "price": 27.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【一人食】6个生煎+6个锅贴",
+      "price": 27.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "招牌灌汤锅贴饺子6个+麻辣牛肉生",
+      "price": 27.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【全家福】鲜肉3个/虾仁3个/麻辣",
+      "price": 29.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "【超满足】8个生煎+8个锅贴",
+      "price": 31.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "麻辣牛肉生煎1个",
+      "price": 4.92
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "dish_name": "麻辣虾仁牛肉生煎1个",
+      "price": 5.92
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】任意拼(七选二)",
+      "price": 24.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】羊肉馅/牛肉馅(15+15)",
+      "price": 24.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】韭菜鲜肉/猪肉白菜(二选一)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞24个】任意拼(七选二)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】猪肉三鲜/猪肉芹菜(二选一)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞18个】牛肉馅/羊肉馅(9+9)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞18个】任意拼(七选二)",
+      "price": 21.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞24个】羊肉馅/牛肉馅(二选一)",
+      "price": 22.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞18个】猪肉香菇/芹菜鲜肉(二选一)",
+      "price": 19.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "dish_name": "【干捞30个】猪肉香菇",
+      "price": 22.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包(两笼) 套餐",
+      "price": 24.19
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包+鲜肉蒸饺",
+      "price": 24.59
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包+现磨豆浆+茶叶蛋一枚",
+      "price": 19.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "特色鲜肉小笼包8个",
+      "price": 9.84
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "小笼包+馄饨(紫菜味)+茶叶蛋",
+      "price": 27.18
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "特色鲜肉蒸饺9个",
+      "price": 9.84
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "特色黄金煎包8",
+      "price": 14.78
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "【严选双人套餐】小笼包+小笼包+酸辣",
+      "price": 21.08
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小馄饨(紫菜味)",
+      "price": 11.35
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "鲜肉小笼包+重口味酸辣馄饨",
+      "price": 25.19
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "黄金煎饺9个",
+      "price": 10.62
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "现磨豆浆(热)",
+      "price": 3.78
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "dish_name": "重口味酸辣馄饨15只",
+      "price": 16.79
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "香辣鸡腿堡双堡8件套双人餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "咔滋薯条(中份)",
+      "price": 14.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "香辣鸡腿堡豪华随心选",
+      "price": 49.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "脆爽双鸡堡超满足4件套",
+      "price": 30.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "拌饭家族随心选套餐(3件套)",
+      "price": 22
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "双层脆鸡堡四件套",
+      "price": 26.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "脆皮手枪腿快乐轻享餐",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "榴莲双响炮鸡腿堡3件套",
+      "price": 25.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "一桶都是鸡腿(5根装)",
+      "price": 36.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "炸鸡小食盒5件套",
+      "price": 36.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "榴莲双响炮脆皮鸡腿堡欢聚7件套",
+      "price": 45.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "手枪腿2选1+青果酥+饮料2选1随心选2件套",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "咔滋薯条(中份)2件5折套餐",
+      "price": 14.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "香辣鸡腿堡双堡8件套劲省50.1元套餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "dish_name": "脆爽双鸡堡超大满足4件套",
+      "price": 30.7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "招牌排骨肉条双拼(超大份超值半斤)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "招牌排骨肉条双拼(大份)+吮指盐酥鸡",
+      "price": 30.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "招牌桥头秘制排骨(超大份)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "网红锅巴土豆",
+      "price": 6.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "排骨肉条双拼(大份)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "排骨肉条双拼(大份)+椒盐杏鲍菇",
+      "price": 27.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头秘制肉条(大份)",
+      "price": 21.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头排骨(大份)+肉",
+      "price": 23.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头秘制排骨(大份)",
+      "price": 23.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "桥头秘制肉条(超大份)",
+      "price": 26.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "dish_name": "秘制绝味掌中宝超大份",
+      "price": 16.99
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【券包专享】牛鱼虾堡双主食4件套",
+      "price": 23.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "两堡一卷豪华随心配套餐",
+      "price": 29.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "双堡翅根桶10件套套餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】大薯条",
+      "price": 16
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】鸡排堡",
+      "price": 17
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】鸡排堡+大薯条+中可",
+      "price": 27
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】超值单人5件套",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】华华翅根桶(6个)",
+      "price": 18.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】招牌全鸡",
+      "price": 20.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】香辣鸡腿堡+鸡排堡",
+      "price": 27.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【到店自取专享】香辣鸡翅",
+      "price": 17
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "dish_name": "【周三吃鸡】经典吃鸡4件套",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "咸甜快乐双人餐套餐",
+      "price": 49.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "麦辣卷堡5件套随心选",
+      "price": 39.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "安格斯厚牛堡四件套",
+      "price": 44.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "安格斯厚牛堡任选",
+      "price": 34
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "大堡口福四件套(培根芝士双牛堡)",
+      "price": 34.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "大堡口福四件套(Hold不住鸡排堡)",
+      "price": 34.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "dish_name": "四拼小食餐",
+      "price": 39.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "牛肉小包(1笼10个)+卤鸡蛋1人套",
+      "price": 22.4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "招牌手工牛肉小包(1笼10个)",
+      "price": 20.4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工牛肉小包(5个)",
+      "price": 19.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工牛肉小包(8个)+卤鸡蛋",
+      "price": 19.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "爽口凉面+牛肉小包(4个)",
+      "price": 18.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "酱牛肉凉皮",
+      "price": 16.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "酱牛肉凉面",
+      "price": 16.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工凉皮+牛肉小包(4个)",
+      "price": 18.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工烧麦(4个)",
+      "price": 7.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "手工凉皮",
+      "price": 9.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "招牌牛肉小包(4个)",
+      "price": 7.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "牛肉小包(1笼10个)+米酒",
+      "price": 9.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "爽口凉面",
+      "price": 9.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "dish_name": "麻辣鸡丝凉面",
+      "price": 9.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "红油牛肉小笼包 +土猪鲜肉小笼包",
+      "price": 22.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "红油牛肉小笼包(1笼7个)",
+      "price": 13.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "牛肉、猪肉双拼包(8个)",
+      "price": 13.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "红油牛肉小笼包一笼+杂粮小米粥+红",
+      "price": 22.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "皮蛋瘦肉粥+杂粮小米粥+土猪鲜肉",
+      "price": 21.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "养生八宝粥(现熬杯装)",
+      "price": 6.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "杂粮小米粥(现熬杯装)",
+      "price": 5.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "老汉口烧麦(4个)",
+      "price": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "鲜土猪肉小笼包一笼+皮蛋瘦肉粥",
+      "price": 19.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "老汉口三鲜豆皮(小)",
+      "price": 11.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "土猪鲜肉小笼包(1笼7个)",
+      "price": 12.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "人气王!皮蛋瘦肉粥(现熬杯装)",
+      "price": 8.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "鲜土猪肉小笼包一笼+八宝粥+卤鸡蛋",
+      "price": 19.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "冰镇绿豆沙",
+      "price": 5.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "冰镇酸梅汤",
+      "price": 5.5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "dish_name": "土猪鲜肉小笼包(2笼)+养胃白米粥2",
+      "price": 24.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "2+2随心选超值套餐",
+      "price": 27.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "1+1随心选超值套餐",
+      "price": 27.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "小食超值随心选",
+      "price": 3.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "芝士火鸡焗意面(特辣)",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "牛肉卷意面管饱套餐1+1+1",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "一人食意面小吃套餐1+1+1",
+      "price": 31.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "芝士卷任选1+意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "【美味浓汤】主食随心选套餐",
+      "price": 31.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "黑椒牛肉意面",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "番茄肉酱芝士意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "奶油蘑菇芝士意面",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "dish_name": "【山姆上校单人超值管饱】1+1+1自选套餐",
+      "price": 20.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【肉多多】鸡排&鳕鱼排茄汁肉酱意面",
+      "price": 20.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【招牌牛牛牛】经典厚切黑椒牛排意面",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【口碑爆棚】板烧鸡腿肉番茄肉酱意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【人气推荐】香煎厚切黑椒法式烤排意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【能量满足】鸡肉拼香肠番茄肉酱意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【墙烈推荐】肉柳爆火意面",
+      "price": 21.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【严选单人餐】肉柳拼培根黑椒意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【品质单人餐】牛排拼鸡排茄汁肉酱意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【韩式火鸡辣】慢熬火辣鸡肉意面",
+      "price": 20.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "dish_name": "【肌肉满满】香脆鸡排番茄肉酱意面",
+      "price": 20.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "【新品上市】8英寸现烤蓝莓果酱披萨",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "【新品特惠】8英寸现烤香肠披萨",
+      "price": 22.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤新奥尔良烤鸡肉披萨",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸新奥尔良烤鸡肉披萨",
+      "price": 24.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤泰国金枕榴莲果肉披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤意式肉酱披萨",
+      "price": 22.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤金枕纯榴莲果肉披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤巴西孜然烤肉披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "8英寸现烤意式肉酱披萨",
+      "price": 25.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤墨西哥牛肉披萨(辣)",
+      "price": 22.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤咸蛋黄风味芝士披萨",
+      "price": 22.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "dish_name": "10英寸现烤火腿培根披萨",
+      "price": 22.9
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄麻辣龙虾仁拌面(20只)",
+      "price": 33.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄拌面+10颗蟹腿肉(去壳)+10只麻辣龙虾仁",
+      "price": 59.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "【蟹黄多多】蟹黄蟹肉大碗拌面",
+      "price": 20.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄大碗拌面+蚝仔煎蛋+10只麻辣龙虾仁",
+      "price": 32.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "蟹黄大碗拌面+2个火箭鱿鱼+随机茶饮",
+      "price": 28.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "【超级大礼包】鲍鱼3个+青虾仁3个",
+      "price": 6.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "Q弹小海参3只",
+      "price": 11.38
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "吃一口鲜蟹(2个半只熟)",
+      "price": 4.38
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "香酥蝴蝶虾3只",
+      "price": 5.38
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "椒麻小酥肉",
+      "price": 5.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "单加龙虾仁一份10个(单点不配送)",
+      "price": 11.08
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "dish_name": "单加蟹腿肉1份(10个)",
+      "price": 13.88
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "奶油肉酱意面",
+      "price": 23.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "黑椒牛柳意面",
+      "price": 24.12
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "番茄牛柳意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "茄汁虾仁意面",
+      "price": 24.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "火鸡风味香肠意面",
+      "price": 20.25
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "黑椒香肠意面",
+      "price": 19.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "火鸡风味鸡肉意面",
+      "price": 17.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "番茄鸡肉意面",
+      "price": 19.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "素菜意面(不加肉)",
+      "price": 17
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "黑椒鸡肉意面",
+      "price": 19.85
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "番茄香肠意面",
+      "price": 19.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油香肠意面",
+      "price": 17.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油鸡肉意面",
+      "price": 17.8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "意式肉酱意面",
+      "price": 21
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油牛柳意面",
+      "price": 24.3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "dish_name": "蒜香辣油炒牛肉",
+      "price": 24.3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "黑椒牛排土豆泥沙拉",
+      "price": 26
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "厚切牛排鲜蔬沙拉",
+      "price": 26
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "牛肉炒饭一人食套餐",
+      "price": 33
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "黑胡椒传奇牛排套餐",
+      "price": 47
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "黑椒牛排鲜蔬沙拉",
+      "price": 23
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "嘟嘟童趣牛排儿童套餐",
+      "price": 38
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "热销双人牛排套餐",
+      "price": 104
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "沙朗牛排套餐",
+      "price": 44
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "招牌双拼套餐",
+      "price": 47
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "红酒菲力风味牛排套餐",
+      "price": 40
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "dish_name": "招牌牛肉饭双人套餐",
+      "price": 47
+    }
+  ],
+  "coupons": [
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "condition_amount": 20,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "安格斯·牛肉拌饭",
+      "condition_amount": 30,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "condition_amount": 25,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "condition_amount": 30,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "够泰芒果糯米饭",
+      "condition_amount": 30,
+      "discount_amount": 7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "condition_amount": 20,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "condition_amount": 50,
+      "discount_amount": 10
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "condition_amount": 18,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "杭州小笼包",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "老城隍庙生煎",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "condition_amount": 18,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "condition_amount": 22,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "北方饺子",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "正宗杭州小笼包",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "德克士(光谷步行街店)",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "condition_amount": 18,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "锡能成桥头排骨",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "华莱士·全鸡汉堡",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "麦当劳&麦咖啡",
+      "condition_amount": 50,
+      "discount_amount": 12
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "牛肉小包(华科校园店)",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吞口熊·牛排手作意面",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "condition_amount": 50,
+      "discount_amount": 12
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "condition_amount": 35,
+      "discount_amount": 7
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "阿提意面.牛排",
+      "condition_amount": 45,
+      "discount_amount": 10
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "condition_amount": 50,
+      "discount_amount": 10
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "豪客来牛排",
+      "condition_amount": 80,
+      "discount_amount": 15
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "condition_amount": 20,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "安格斯·牛肉拌饭",
+      "condition_amount": 30,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "condition_amount": 25,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "虎口夺食东北老式烧烤",
+      "condition_amount": 30,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "够泰芒果糯米饭",
+      "condition_amount": 30,
+      "discount_amount": 7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "condition_amount": 20,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吉野家(武汉世界城广场)",
+      "condition_amount": 50,
+      "discount_amount": 10
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "condition_amount": 18,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "杭州小笼包",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "老城隍庙生煎",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "condition_amount": 18,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "condition_amount": 22,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "北方饺子",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "正宗杭州小笼包",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "德克士(光谷步行街店)",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "condition_amount": 18,
+      "discount_amount": 3
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "锡能成桥头排骨",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "华莱士·全鸡汉堡",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "麦当劳&麦咖啡",
+      "condition_amount": 50,
+      "discount_amount": 12
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "牛肉小包(华科校园店)",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "condition_amount": 15,
+      "discount_amount": 2
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "笼上鲜·宜昌老面红油包",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "山姆上校芝士牛肉卷·意",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "吞口熊·牛排手作意面",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "condition_amount": 20,
+      "discount_amount": 4
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "至尊现烤披萨（光谷店）",
+      "condition_amount": 30,
+      "discount_amount": 6
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "condition_amount": 40,
+      "discount_amount": 8
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "苏记蟹王.蟹黄龙虾饭龙",
+      "condition_amount": 50,
+      "discount_amount": 12
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "condition_amount": 25,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "condition_amount": 35,
+      "discount_amount": 7
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "阿提意面.牛排",
+      "condition_amount": 45,
+      "discount_amount": 10
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "condition_amount": 30,
+      "discount_amount": 5
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "condition_amount": 50,
+      "discount_amount": 10
+    },
+    {
+      "platform_name": "饿了么",
+      "shop_name": "豪客来牛排",
+      "condition_amount": 80,
+      "discount_amount": 15
+    }
+  ]
+}
