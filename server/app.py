@@ -245,10 +245,7 @@ def search_restaurants():
             "reviews": monthly_sales,
             "distance": distance_str,
             "deliveryTime": delivery_time_str,
-            "deliveryFee": {
-                "meituan": f"¥{meituan_data['delivery_fee']}" if meituan_data else "0.0",
-                "ele": f"¥{ele_data['delivery_fee']}" if ele_data else "0.0"
-            },
+            "deliveryFee": f"¥{(meituan_data['delivery_fee']+ele_data['delivery_fee'])/2}" if meituan_data and ele_data else "¥0.0",
             "minimumOrder": {
                 "meituan": min_order_meituan,
                 "ele": min_order_ele
