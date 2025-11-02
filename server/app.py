@@ -138,6 +138,8 @@ def search_restaurants():
 
     conn = db._get_thread_connection()
     cursor = conn.cursor()
+
+    # 第一步：获取匹配的店铺（含 delivery_distance, delivery_time）
     cursor.execute("""
         SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
                s.delivery_distance, s.delivery_time,
@@ -148,23 +150,44 @@ def search_restaurants():
         ORDER BY s.shop_name, p.platform_name
     """, (f"%{keyword}%",))
 
-    rows = cursor.fetchall()
+    shop_rows = cursor.fetchall()
 
     from collections import defaultdict
-    grouped = defaultdict(list)
-    for row in rows:
-        grouped[row["shop_name"]].append(row)
+    grouped_shops = defaultdict(list)
+    for row in shop_rows:
+        grouped_shops[row["shop_name"]].append(row)
+
+    # 提前收集所有 shop_id，用于批量查询菜品
+    all_shop_ids = [row["shop_id"] for row in shop_rows]
+    dish_map = {}  # shop_id -> list of dishes
+
+    if all_shop_ids:
+        placeholders = ','.join('?' * len(all_shop_ids))
+        cursor.execute(f"""
+            SELECT dish_id, shop_id, dish_name, price
+            FROM dishes
+            WHERE shop_id IN ({placeholders})
+            ORDER BY dish_name
+        """, all_shop_ids)
+
+        for dish in cursor.fetchall():
+            shop_id = dish["shop_id"]
+            if shop_id not in dish_map:
+                dish_map[shop_id] = []
+            dish_map[shop_id].append({
+                "name": dish["dish_name"],
+                "price": round(dish["price"], 2)
+            })
 
     results = []
-    for shop_name, platforms in grouped.items():
-        meituan_data = None
-        ele_data = None
+    for shop_name, platforms in grouped_shops.items():
+        meituan_data = next((p for p in platforms if p["platform_name"] == "美团"), None)
+        ele_data = next((p for p in platforms if p["platform_name"] == "饿了么"), None)
 
-        for p in platforms:
-            if p["platform_name"] == "美团":
-                meituan_data = p
-            elif p["platform_name"] == "饿了么":
-                ele_data = p
+        # 主店铺用于 distance / deliveryTime
+        main_shop = meituan_data or ele_data
+        if not main_shop:
+            continue
 
         rating = max(
             meituan_data["rating"] if meituan_data else 0,
@@ -180,25 +203,40 @@ def search_restaurants():
         price_meituan = min_order_meituan + 10 if min_order_meituan else None
         price_ele = min_order_ele + 8 if min_order_ele else None
 
-        # 选择主店铺数据（用于 distance 和 deliveryTime）
-        main_shop = meituan_data if meituan_data else ele_data
-        if not main_shop:
-            continue  # 理论上不会发生，但安全起见
-
-        # 格式化 distance：保留1位小数，单位 km
         distance_val = main_shop["delivery_distance"] or 1.2
         distance_str = f"{distance_val:.1f}km"
 
-        # 格式化 delivery_time
         delivery_time_val = main_shop["delivery_time"]
-        if delivery_time_val is not None:
-            # 假设 delivery_time 存的是平均时间，比如 35 → "30-40分钟"
-            # 你可以根据业务调整范围，这里简单用 ±5 分钟
-            low = max(10, delivery_time_val - 5)
-            high = delivery_time_val + 5
-            delivery_time_str = f"{low}-{high}分钟"
-        else:
-            delivery_time_str = "30-40分钟"  # fallback
+        delivery_time_str = f"{max(10, delivery_time_val - 5)}-{(delivery_time_val or 35) + 5}分钟" \
+            if delivery_time_val else "30-40分钟"
+
+        # === 构建 dishes 列表 ===
+        # 按菜品名聚合，记录各平台价格
+        dish_name_to_platforms = defaultdict(dict)
+        shop_ids = []
+        if meituan_data:
+            shop_ids.append(meituan_data["shop_id"])
+        if ele_data:
+            shop_ids.append(ele_data["shop_id"])
+
+        for shop_id in shop_ids:
+            platform_name = "meituan" if meituan_data and shop_id == meituan_data["shop_id"] else "ele"
+            dishes = dish_map.get(shop_id, [])
+            for d in dishes:
+                dish_name_to_platforms[d["name"]][platform_name] = d["price"]
+
+        # 转为列表格式
+        dishes_list = []
+        for name, prices in dish_name_to_platforms.items():
+            dish_entry = {"name": name}
+            if "meituan" in prices:
+                dish_entry["meituan"] = prices["meituan"]
+            if "ele" in prices:
+                dish_entry["ele"] = prices["ele"]
+            dishes_list.append(dish_entry)
+
+        # 限制菜品数量（可选，比如最多显示10个）
+        dishes_list = dishes_list[:10]
 
         results.append({
             "id": main_shop["shop_id"],
@@ -208,8 +246,8 @@ def search_restaurants():
             "distance": distance_str,
             "deliveryTime": delivery_time_str,
             "deliveryFee": {
-                "meituan": f"¥{meituan_data['delivery_fee']}" if meituan_data else None,
-                "ele": f"¥{ele_data['delivery_fee']}" if ele_data else None
+                "meituan": f"¥{meituan_data['delivery_fee']}" if meituan_data else "0.0",
+                "ele": f"¥{ele_data['delivery_fee']}" if ele_data else "0.0"
             },
             "minimumOrder": {
                 "meituan": min_order_meituan,
@@ -217,18 +255,17 @@ def search_restaurants():
             },
             "image": f"https://via.placeholder.com/300x160?text={shop_name}",
             "prices": {
-                "meituan": {"current": price_meituan} if price_meituan is not None else None,
-                "ele": {"current": price_ele} if price_ele is not None else None
+                "meituan": {"current": price_meituan} if price_meituan is not None else "0.0",
+                "ele": {"current": price_ele} if price_ele is not None else "0.0"
             },
             "isFavorite": False,
-            "dishes": []
+            "dishes": dishes_list
         })
 
     results.sort(key=lambda x: (-x["rating"], -x["reviews"]))
     results = results[:20]
 
     return jsonify({"success": True, "restaurants": results})
-
 # ========== 比价接口（可选） ==========
 
 @app.route('/api/dish/compare', methods=['GET'])
