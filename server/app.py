@@ -7,14 +7,7 @@ from utils import load_data_from_json
 app = Flask(__name__)
 CORS(app)  # 允许跨域（开发阶段）
 
-# 初始化数据库
-db = FoodPriceDB()
-db_path = os.getenv("DB_PATH", "food_price.db")
-if not db.initialize(db_path):
-    raise RuntimeError("数据库初始化失败")
-db.clear_all_data()
 
-load_data_from_json(db, "./data.json")
 # if not db.initialize_test_data():
 #     print("测试数据初始化失败")
 #     exit(1)
@@ -191,4 +184,12 @@ def compare_dish():
 # ========== 启动 ==========
 
 if __name__ == '__main__':
+    # 初始化数据库
+    db = FoodPriceDB()
+    db_path = os.getenv("DB_PATH", "food_price.db")
+    if not db.initialize(db_path):
+        raise RuntimeError("数据库初始化失败")
+    db.clear_all_data()
+
+    load_data_from_json(db, "./data.json")
     app.run(host='0.0.0.0', port=5000, debug=True)

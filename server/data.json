@@ -1,4 +1,10 @@
-{ "users": [],
+{ "users": [
+    {
+        "username": "admin",
+        "email":"admin@hust.edu.cn",
+        "password":"admin"
+    }
+],
   "platforms": [
     {
       "platform_name": "美团"
