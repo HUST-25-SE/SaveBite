@@ -200,8 +200,19 @@ def search_restaurants():
         min_order_meituan = meituan_data["min_order"] if meituan_data else None
         min_order_ele = ele_data["min_order"] if ele_data else None
 
-        price_meituan = min_order_meituan + 10 if min_order_meituan else None
-        price_ele = min_order_ele + 8 if min_order_ele else None
+        # === 计算两个平台的菜品总价 ===
+        total_meituan = None
+        total_ele = None
+
+        if meituan_data:
+            mt_dishes = dish_map.get(meituan_data["shop_id"], [])
+            if mt_dishes:
+                total_meituan = round(sum(d["price"] for d in mt_dishes), 2)
+
+        if ele_data:
+            ele_dishes = dish_map.get(ele_data["shop_id"], [])
+            if ele_dishes:
+                total_ele = round(sum(d["price"] for d in ele_dishes), 2)
 
         distance_val = main_shop["delivery_distance"] or 1.2
         distance_str = f"{distance_val:.1f}km"
@@ -210,8 +221,7 @@ def search_restaurants():
         delivery_time_str = f"{max(10, delivery_time_val - 5)}-{(delivery_time_val or 35) + 5}分钟" \
             if delivery_time_val else "30-40分钟"
 
-        # === 构建 dishes 列表 ===
-        # 按菜品名聚合，记录各平台价格
+        # === 构建 dishes 列表（保持不变）===
         dish_name_to_platforms = defaultdict(dict)
         shop_ids = []
         if meituan_data:
@@ -225,7 +235,6 @@ def search_restaurants():
             for d in dishes:
                 dish_name_to_platforms[d["name"]][platform_name] = d["price"]
 
-        # 转为列表格式
         dishes_list = []
         for name, prices in dish_name_to_platforms.items():
             dish_entry = {"name": name}
@@ -234,8 +243,6 @@ def search_restaurants():
             if "ele" in prices:
                 dish_entry["ele"] = prices["ele"]
             dishes_list.append(dish_entry)
-
-        # 限制菜品数量（可选，比如最多显示10个）
         dishes_list = dishes_list[:10]
 
         results.append({
@@ -252,17 +259,12 @@ def search_restaurants():
             },
             "image": f"https://via.placeholder.com/300x160?text={shop_name}",
             "prices": {
-                "meituan": {"current": price_meituan} if price_meituan is not None else None,
-                "ele": {"current": price_ele} if price_ele is not None else None
+                "meituan": {"current": total_meituan} if total_meituan is not None else None,
+                "ele": {"current": total_ele} if total_ele is not None else None
             },
             "isFavorite": False,
             "dishes": dishes_list
         })
-
-    results.sort(key=lambda x: (-x["rating"], -x["reviews"]))
-    results = results[:20]
-
-    return jsonify({"success": True, "restaurants": results})
 # ========== 比价接口（可选） ==========
 
 @app.route('/api/dish/compare', methods=['GET'])
@@ -271,7 +273,7 @@ def compare_dish():
     shop_name = request.args.get('shop_name')
     if not dish_name:
         return jsonify({"success": False, "message": "缺少菜品名"}), 400
-    success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
+    success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=True)
     return jsonify({"success": success, "results": results if success else str(results)})
 
 # ========== 启动 ==========
