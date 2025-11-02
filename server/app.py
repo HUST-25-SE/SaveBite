@@ -265,6 +265,7 @@ def search_restaurants():
             "isFavorite": False,
             "dishes": dishes_list
         })
+    return jsonify({"success": True, "restaurants": results})
 # ========== 比价接口（可选） ==========
 
 @app.route('/api/dish/compare', methods=['GET'])
@@ -273,7 +274,7 @@ def compare_dish():
     shop_name = request.args.get('shop_name')
     if not dish_name:
         return jsonify({"success": False, "message": "缺少菜品名"}), 400
-    success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=True)
+    success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
 # ========== 启动 ==========
