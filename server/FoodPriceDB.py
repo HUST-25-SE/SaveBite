@@ -152,25 +152,25 @@ class FoodPriceDB:
     # ======================
     # 用户管理
     # ======================
-    def register_user(self, username: str, email: str, password: str) -> Tuple[bool, str]:
-        """用户注册"""
+    def register_user(self, username: str, email: str, password: str) -> Tuple[bool, Optional[int], str]:
+        """用户注册，返回 (成功, user_id, 消息)"""
         def operation():
             cursor = self._get_thread_cursor()
             try:
-                # 检查用户名或邮箱是否已存在
                 cursor.execute("SELECT user_id FROM users WHERE username = ? OR email = ?", (username, email))
                 if cursor.fetchone():
-                    return (False, "用户名或邮箱已存在")
+                    return (False, None, "用户名或邮箱已存在")
 
                 hashed_pwd = self._hash_password(password)
                 cursor.execute(
                     "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
                     (username, email, hashed_pwd)
                 )
+                user_id = cursor.lastrowid  # ✅ 在同一个 cursor 中获取
                 self._get_thread_connection().commit()
-                return (True, "注册成功")
+                return (True, user_id, "注册成功")
             except Exception as e:
-                return (False, f"注册失败: {e}")
+                return (False, None, f"注册失败: {e}")
         return self._retry_operation(operation)
 
     def login_user(self, username: str, password: str) -> Tuple[bool, Optional[int], str]:

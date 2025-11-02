@@ -29,9 +29,10 @@ def register():
     password = data.get('password')
     if not all([username, email, password]):
         return jsonify({"success": False, "message": "缺少必要字段"}), 400
-    success, msg = db.register_user(username, email, password)
+
+    success, user_id, msg = db.register_user(username, email, password) 
     if success:
-        _, user_info = db.get_user_by_id(db._get_thread_cursor().lastrowid)
+        _, user_info = db.get_user_by_id(user_id) 
         return jsonify({"success": True, "user": user_info})
     else:
         return jsonify({"success": False, "message": msg}), 400
