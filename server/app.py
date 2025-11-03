@@ -1,15 +1,84 @@
-# app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from FoodPriceDB import FoodPriceDB
 import os, random
-from utils import load_data_from_json
+import sys
+
+# 添加当前目录到 Python 路径
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from FoodPriceDB import FoodPriceDB
+    from utils import load_data_from_json
+except ImportError as e:
+    print(f"Import error: {e}")
+    # 为导入错误提供备用方案
+    FoodPriceDB = None
+    load_data_from_json = None
 
 app = Flask(__name__)
-CORS(app)  # 允许跨域（开发阶段）
+CORS(app)  # 允许跨域
 
-# 全局 db 实例（注意：实际生产应使用连接池或请求上下文）
+# 全局 db 实例
 db = None
+
+# 在 init_database() 函数中修改数据库路径
+def init_database():
+    """初始化数据库"""
+    global db
+    try:
+        if FoodPriceDB is None:
+            return False, "数据库模块导入失败"
+            
+        db = FoodPriceDB()
+        
+        # Vercel 环境下使用临时数据库路径
+        db_path = "/tmp/food_price.db"
+        
+        # 确保 /tmp 目录存在（在 Vercel 中已经存在）
+        if not db.initialize(db_path):
+            return False, "数据库初始化失败"
+            
+        # 如果是新数据库，加载数据
+        conn = db._get_thread_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM shops")
+        shop_count = cursor.fetchone()[0]
+        
+        if shop_count == 0 and load_data_from_json is not None:
+            # 尝试从 server 目录的 data.json 加载数据
+            data_file = os.path.join(os.path.dirname(__file__), "data.json")
+            if os.path.exists(data_file):
+                load_data_from_json(db, data_file)
+                print("数据加载成功")
+            else:
+                # 如果 server/data.json 不存在，尝试根目录的 data.json
+                root_data_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data.json")
+                if os.path.exists(root_data_file):
+                    load_data_from_json(db, root_data_file)
+                    print("从根目录加载数据成功")
+        
+        return True, "数据库初始化成功"
+        
+    except Exception as e:
+        return False, f"数据库初始化异常: {str(e)}"
+
+# Vercel 需要这个 handler
+@app.before_first_request
+def initialize_app():
+    """在第一个请求前初始化应用"""
+    if db is None:
+        success, message = init_database()
+        if not success:
+            print(f"初始化失败: {message}")
+
+# 在应用启动时立即初始化（适用于 Vercel）
+if os.environ.get('VERCEL') or os.environ.get('VERCEL_ENV'):
+    print("Vercel 环境检测到，正在初始化数据库...")
+    success, message = init_database()
+    if success:
+        print("数据库初始化成功")
+    else:
+        print(f"数据库初始化失败: {message}")
 
 # 工具函数：从请求头获取用户 ID（简化版，正式应使用 JWT）
 def get_user_id_from_request():
@@ -18,10 +87,32 @@ def get_user_id_from_request():
         return None
     return int(user_id)
 
+# ========== 健康检查接口 ==========
+@app.route('/')
+def home():
+    return jsonify({
+        "message": "Food Price API is running", 
+        "status": "healthy",
+        "db_initialized": db is not None
+    })
+
+@app.route('/api/health')
+def health_check():
+    """健康检查端点"""
+    db_status = "initialized" if db is not None else "not_initialized"
+    return jsonify({
+        "status": "ok", 
+        "database": db_status,
+        "environment": os.environ.get('VERCEL_ENV', 'development')
+    })
+
 # ========== 认证接口 ==========
 
 @app.route('/api/auth/register', methods=['POST'])
 def register():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     data = request.json
     username = data.get('username')
     email = data.get('email')
@@ -38,6 +129,9 @@ def register():
 
 @app.route('/api/auth/login', methods=['POST'])
 def login():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     data = request.json
     username = data.get('username')
     password = data.get('password')
@@ -56,6 +150,9 @@ def login():
 
 @app.route('/api/auth/me', methods=['GET'])
 def me():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
@@ -88,6 +185,9 @@ def get_image_url(meituan_data, ele_data):
 
 @app.route('/api/user/favorites', methods=['GET'])
 def get_favorites():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
@@ -232,6 +332,9 @@ def get_favorites():
 
 @app.route('/api/favorite/toggle', methods=['POST'])
 def toggle_favorite():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
@@ -287,6 +390,9 @@ def toggle_favorite():
 
 @app.route('/api/restaurants/search', methods=['GET'])
 def search_restaurants():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     keyword = request.args.get('keyword', '').strip()
     user_id = get_user_id_from_request()
 
@@ -449,6 +555,9 @@ def search_restaurants():
 
 @app.route('/api/dish/compare', methods=['GET'])
 def compare_dish():
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"}), 500
+        
     dish_name = request.args.get('dish_name')
     shop_name = request.args.get('shop_name')
     if not dish_name:
@@ -456,14 +565,16 @@ def compare_dish():
     success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
-# ========== 启动 ==========
+# ========== Vercel 专用处理 ==========
 
+# Vercel 需要这个 handler
+app = app
+
+# 本地开发启动
 if __name__ == '__main__':
-    db = FoodPriceDB()
-    db_path = os.getenv("DB_PATH", "food_price.db")
-    if not db.initialize(db_path):
-        raise RuntimeError("数据库初始化失败")
-    # db.clear_all_data()
-
-    # load_data_from_json(db, "./data.json")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    success, message = init_database()
+    if success:
+        print("数据库初始化成功")
+        app.run(host='0.0.0.0', port=5000, debug=True)
+    else:
+        print(f"启动失败: {message}")
