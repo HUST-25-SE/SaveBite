@@ -340,12 +340,12 @@ def search_restaurants():
         avg_meituan = None
         avg_ele = None
 
-        if meituan_
+        if meituan_data:
             mt_dishes = dish_map.get(meituan_data["shop_id"], [])
             if mt_dishes:
                 avg_meituan = round(sum(d["price"] for d in mt_dishes) / len(mt_dishes), 2)
 
-        if ele_
+        if ele_data:
             ele_dishes = dish_map.get(ele_data["shop_id"], [])
             if ele_dishes:
                 avg_ele = round(sum(d["price"] for d in ele_dishes) / len(ele_dishes), 2)
@@ -359,9 +359,9 @@ def search_restaurants():
 
         dish_name_to_platforms = defaultdict(dict)
         shop_ids = []
-        if meituan_
+        if meituan_data:
             shop_ids.append(meituan_data["shop_id"])
-        if ele_
+        if ele_data:
             shop_ids.append(ele_data["shop_id"])
 
         for shop_id in shop_ids:
