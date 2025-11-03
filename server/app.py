@@ -4,6 +4,7 @@ from flask_cors import CORS
 from FoodPriceDB import FoodPriceDB
 import os, random
 from utils import load_data_from_json
+from flask import send_from_directory
 
 app = Flask(__name__)
 CORS(app)  # 允许跨域（开发阶段）
@@ -456,6 +457,17 @@ def compare_dish():
     success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
+# 前端文件放在与 app.py 同级的 ../frontend/ 目录（可根据实际情况修改）
+FRONTEND_DIR = os.path.join(os.path.dirname(__file__), '..', 'frontend')
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_frontend(path):
+    if path != "" and os.path.exists(os.path.join(FRONTEND_DIR, path)):
+        return send_from_directory(FRONTEND_DIR, path)
+    else:
+        # 对于未匹配的路径（如 /auth/callback），回退到 index.html（适用于 SPA 路由）
+        return send_from_directory(FRONTEND_DIR, 'index.html')
 # ========== 启动 ==========
 
 if __name__ == '__main__':
