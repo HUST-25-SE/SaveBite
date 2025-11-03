@@ -69,11 +69,20 @@ def me():
 
 def get_image_url(meituan_data, ele_data):
     """优先使用美团图片，其次饿了么，最后回退到 placeholder"""
-    if meituan_data and meituan_data.get("image_url") not in (None, ""):
-        return meituan_data["image_url"]
-    if ele_data and ele_data.get("image_url") not in (None, ""):
-        return ele_data["image_url"]
-    # 回退
+    def safe_image(row):
+        if row is None:
+            return None
+        url = row["image_url"]  # sqlite3.Row 使用 []
+        return url if url not in (None, "") else None
+
+    mt_url = safe_image(meituan_data)
+    ele_url = safe_image(ele_data)
+
+    if mt_url:
+        return mt_url
+    if ele_url:
+        return ele_url
+
     shop_name = (meituan_data or ele_data)["shop_name"]
     return f"https://via.placeholder.com/300x160?text={shop_name}"
 
