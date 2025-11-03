@@ -225,27 +225,70 @@ def toggle_favorite():
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
+
     data = request.json
     shop_id = data.get('shop_id')
     if not shop_id or not isinstance(shop_id, int):
         return jsonify({"success": False, "message": "无效店铺ID"}), 400
-    # 检查是否已收藏
+
     conn = db._get_thread_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT 1 FROM user_favorites WHERE user_id = ? AND shop_id = ?", (user_id, shop_id))
-    exists = cursor.fetchone()
-    if exists:
-        success, msg = db.remove_favorite(user_id, shop_id)
+
+    # Step 1: 获取当前 shop_id 对应的 shop_name
+    cursor.execute("SELECT shop_name FROM shops WHERE shop_id = ?", (shop_id,))
+    shop_row = cursor.fetchone()
+    if not shop_row:
+        return jsonify({"success": False, "message": "店铺不存在"}), 404
+
+    shop_name = shop_row["shop_name"]
+
+    # Step 2: 查找所有同名店铺的 shop_id（跨平台）
+    cursor.execute("""
+        SELECT shop_id FROM shops s
+        JOIN platforms p ON s.platform_id = p.platform_id
+        WHERE s.shop_name = ?
+    """, (shop_name,))
+    same_name_shop_ids = [row["shop_id"] for row in cursor.fetchall()]
+
+    if not same_name_shop_ids:
+        same_name_shop_ids = [shop_id]  # fallback
+
+    # Step 3: 检查这些 shop_id 中是否**任意一个**已被收藏
+    placeholders = ','.join('?' * len(same_name_shop_ids))
+    cursor.execute(f"""
+        SELECT shop_id FROM user_favorites 
+        WHERE user_id = ? AND shop_id IN ({placeholders})
+    """, [user_id] + same_name_shop_ids)
+
+    already_favorited_shop_ids = {row["shop_id"] for row in cursor.fetchall()}
+    has_any_favorite = len(already_favorited_shop_ids) > 0
+
+    if has_any_favorite:
+        # 取消收藏：取消所有同名店铺
+        removed_count = 0
+        for sid in same_name_shop_ids:
+            success, msg = db.remove_favorite(user_id, sid)
+            if success:
+                removed_count += 1
         is_favorite = False
+        success = True
+        message = "取消收藏成功"
     else:
-        success, msg = db.add_favorite(user_id, shop_id)
+        # 收藏：收藏所有同名店铺
+        added_count = 0
+        for sid in same_name_shop_ids:
+            success, msg = db.add_favorite(user_id, sid)
+            if success:
+                added_count += 1
         is_favorite = True
+        success = True
+        message = "收藏成功"
+
     if success:
         return jsonify({"success": True, "isFavorite": is_favorite})
     else:
-        return jsonify({"success": False, "message": msg}), 400
+        return jsonify({"success": False, "message": message}), 400
 
-# ========== 搜索接口 ==========
 
 # ========== 搜索接口 ==========
 @app.route('/api/restaurants/search', methods=['GET'])
