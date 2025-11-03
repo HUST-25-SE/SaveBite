@@ -8,7 +8,7 @@ from datetime import datetime
 
 def load_data_from_json(db: 'FoodPriceDB', json_path: str) -> bool:
     """
-    从 JSON 文件加载数据到数据库
+    从 JSON 文件加载数据到数据库（支持 shops.image_url）
     """
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
@@ -37,7 +37,7 @@ def load_data_from_json(db: 'FoodPriceDB', json_path: str) -> bool:
             print(f"⚠️ 平台 {plat['platform_name']} 导入失败: {msg}")
             success = False
 
-    # 3. 导入店铺
+    # 3. 导入店铺（新增 image_url 支持）
     shop_key_to_id: Dict[tuple, int] = {}  # (platform_name, shop_name) -> shop_id
     for shop in data.get("shops", []):
         ok, msg, shop_id = db.add_shop(
@@ -49,7 +49,8 @@ def load_data_from_json(db: 'FoodPriceDB', json_path: str) -> bool:
             delivery_fee=shop.get("delivery_fee", 0),
             monthly_sales=shop.get("monthly_sales", 0),
             min_order=shop.get("min_order", 0),
-            avg_consumption=shop.get("avg_consumption", 0)
+            avg_consumption=shop.get("avg_consumption", 0),
+            image_url=shop.get("image_url")  # ← 新增字段，可为 None
         )
         if ok and shop_id is not None:
             shop_key_to_id[(shop["platform_name"], shop["shop_name"])] = shop_id
