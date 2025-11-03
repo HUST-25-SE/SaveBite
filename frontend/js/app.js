@@ -52,7 +52,7 @@ async function checkLoginStatus() {
   }
   const userData = JSON.parse(user);
   try {
-    const res = await fetch('http://localhost:5000/api/auth/me', {
+    const res = await fetch('/api/auth/me', {
       headers: { 'X-User-ID': userData.user_id }
     });
     const data = await res.json();
@@ -82,7 +82,7 @@ async function loadUserFavorites() {
   }
   const userData = JSON.parse(user);
   try {
-    const res = await fetch('http://localhost:5000/api/user/favorites', {
+    const res = await fetch('/api/user/favorites', {
       headers: { 'X-User-ID': userData.user_id }
     });
     const data = await res.json();

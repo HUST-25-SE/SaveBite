@@ -65,7 +65,7 @@ async function toggleFavorite(restaurantName) {
   }
   const userData = JSON.parse(user);
   try {
-    const res = await fetch('http://localhost:5000/api/favorite/toggle', {
+    const res = await fetch('/api/favorite/toggle', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -209,7 +209,7 @@ async function renderHomeRecommendations() {
   const container = document.getElementById('recommendList');
   container.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><p>加载中...</p></div>';
   try {
-    const res = await fetch('http://localhost:5000/api/restaurants/search');
+    const res = await fetch('/api/restaurants/search');
     const data = await res.json();
     container.innerHTML = '';
     if (data.success && data.restaurants) {

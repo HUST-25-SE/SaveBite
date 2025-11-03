@@ -13,7 +13,7 @@ async function performSearch() {
   }
   container.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><p>搜索中...</p></div>';
   try {
-    const res = await fetch(`http://localhost:5000/api/restaurants/search?keyword=${encodeURIComponent(term)}`);
+    const res = await fetch(`/api/restaurants/search?keyword=${encodeURIComponent(term)}`);
     const data = await res.json();
     if (data.success && data.restaurants?.length > 0) {
       container.innerHTML = '<div class="recommend-list" id="searchResultList"></div>';

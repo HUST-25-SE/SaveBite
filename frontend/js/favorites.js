@@ -15,7 +15,7 @@ async function renderFavoritesPage() {
   }
   const userData = JSON.parse(user);
   try {
-    const res = await fetch('http://localhost:5000/api/user/favorites', {
+    const res = await fetch('/api/user/favorites', {
       headers: { 'X-User-ID': userData.user_id }
     });
     const data = await res.json();
