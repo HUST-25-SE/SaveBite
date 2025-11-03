@@ -420,7 +420,6 @@ def search_restaurants():
             FROM shops s
             JOIN platforms p ON s.platform_id = p.platform_id
             ORDER BY s.monthly_sales DESC, s.rating DESC
-            LIMIT 50
         """)
 
     shop_rows = cursor.fetchall()
