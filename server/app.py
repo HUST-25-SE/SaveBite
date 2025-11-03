@@ -274,8 +274,8 @@ def search_restaurants():
         })
 
     # 如果是首页（无 keyword），可再限制返回数量（如前 6 家）
-    if not keyword:
-        results = random.sample(results, 6) if len(results) > 6
+    if not keyword and len(results)> 6:
+        results = random.sample(results, 6)
 
     return jsonify({"success": True, "restaurants": results})
 # ========== 比价接口（可选） ==========
