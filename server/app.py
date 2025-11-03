@@ -463,7 +463,7 @@ if __name__ == '__main__':
     db_path = os.getenv("DB_PATH", "food_price.db")
     if not db.initialize(db_path):
         raise RuntimeError("数据库初始化失败")
-    db.clear_all_data()
+    # db.clear_all_data()
 
-    load_data_from_json(db, "./data.json")
+    # load_data_from_json(db, "./data.json")
     app.run(host='0.0.0.0', port=5000, debug=True)

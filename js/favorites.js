@@ -1,5 +1,4 @@
-// favourites.js
-
+// favorites.js
 async function renderFavoritesPage() {
   const container = document.getElementById('favoritesList');
   const user = localStorage.getItem('currentUser');
@@ -14,7 +13,6 @@ async function renderFavoritesPage() {
     document.getElementById('goToLogin').addEventListener('click', () => window.navigateTo('login'));
     return;
   }
-
   const userData = JSON.parse(user);
   try {
     const res = await fetch('http://localhost:5000/api/user/favorites', {
@@ -39,16 +37,17 @@ function renderFavoriteRestaurantCard(restaurant, container) {
   const meituanPrice = restaurant.prices.meituan.current;
   const elePrice = restaurant.prices.ele.current;
   const recommendedPlatform = meituanPrice <= elePrice ? 'meituan' : 'ele';
-
   const card = document.createElement('div');
   card.className = 'restaurant-card';
-  card.setAttribute('data-name', restaurant.name); // 改为使用店铺名称
+  card.setAttribute('data-name', restaurant.name);
+  // 可保留 active，但为了统一也判断（其实一定是 true）
+  const isFavorite = userFavorites.has(restaurant.name); // 实际必为 true
   card.innerHTML = `
     <div class="restaurant-image" style="background-image: url('${restaurant.image}')"></div>
     <div class="restaurant-info">
       <div class="restaurant-name">
         ${restaurant.name}
-        <button class="favorite-btn active" data-name="${restaurant.name}">
+        <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-name="${restaurant.name}">
           <i class="fas fa-heart"></i>
         </button>
       </div>
@@ -79,17 +78,14 @@ function renderFavoriteRestaurantCard(restaurant, container) {
     </div>
   `;
   container.appendChild(card);
-
   card.querySelector('.favorite-btn').addEventListener('click', e => {
     e.stopPropagation();
-    toggleFavorite(restaurant.name); // 传递店铺名称而不是ID
+    toggleFavorite(restaurant.name);
     card.remove();
-    // 若为空，显示空状态
     if (document.querySelectorAll('#favoritesResultList .restaurant-card').length === 0) {
       document.getElementById('favoritesList').innerHTML = '<div class="empty-state"><i class="far fa-heart"></i><p>您还没有收藏任何餐厅</p></div>';
     }
   });
-
   card.addEventListener('click', () => {
     if (typeof window.showRestaurantDetails === 'function') {
       window.showRestaurantDetails(restaurant);
@@ -97,8 +93,20 @@ function renderFavoriteRestaurantCard(restaurant, container) {
   });
 }
 
+// 监听收藏状态变化（已有逻辑，保留）
 window.addEventListener('favoriteUpdated', e => {
-  const { restaurantName, isFavorite } = e.detail; // 改为 restaurantName
+  const { restaurantName, isFavorite } = e.detail;
+  const allFavoriteBtns = document.querySelectorAll(`.favorite-btn[data-name="${restaurantName}"]`);
+  allFavoriteBtns.forEach(btn => {
+    btn.classList.toggle('active', isFavorite);
+  });
+  const modalBtn = document.getElementById('modalFavoriteBtn');
+  if (modalBtn && modalBtn.dataset.restaurantName === restaurantName) {
+    modalBtn.classList.toggle('active', isFavorite);
+    modalBtn.innerHTML = isFavorite ?
+      '<i class="fas fa-heart"></i> 已收藏' :
+      '<i class="fas fa-heart"></i> 收藏';
+  }
   if (document.getElementById('favorites').classList.contains('active') && !isFavorite) {
     renderFavoritesPage();
   }

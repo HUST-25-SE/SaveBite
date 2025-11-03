@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const authForms = document.querySelectorAll('.auth-form');
-
   tabBtns.forEach(btn => {
     btn.addEventListener('click', function () {
       const tabName = this.getAttribute('data-tab');
@@ -23,11 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('请输入用户名和密码');
       return;
     }
-
     const submitBtn = this.querySelector('.submit-btn');
     submitBtn.disabled = true;
     submitBtn.textContent = '登录中...';
-
     try {
       const res = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
@@ -42,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('userInfo').style.display = 'inline';
         document.getElementById('loginLink').style.display = 'none';
         document.getElementById('logoutLink').style.display = 'inline';
+
+        // 👇 新增
+        await loadUserFavorites();
+
         window.navigateTo('home');
         this.reset();
       } else {
@@ -62,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const email = document.getElementById('regEmail').value;
     const password = document.getElementById('regPassword').value;
     const confirmPassword = document.getElementById('regConfirmPassword').value;
-
     if (!username || !email || !password || !confirmPassword) {
       alert('请填写所有字段');
       return;
@@ -80,11 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('邮箱格式无效');
       return;
     }
-
     const submitBtn = this.querySelector('.submit-btn');
     submitBtn.disabled = true;
     submitBtn.textContent = '注册中...';
-
     try {
       const res = await fetch('http://localhost:5000/api/auth/register', {
         method: 'POST',
@@ -99,6 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('userInfo').style.display = 'inline';
         document.getElementById('loginLink').style.display = 'none';
         document.getElementById('logoutLink').style.display = 'inline';
+
+        // 👇 新增
+        await loadUserFavorites();
+
         alert('注册成功！已自动登录');
         window.navigateTo('home');
         this.reset();

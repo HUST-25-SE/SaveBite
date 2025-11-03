@@ -1,5 +1,4 @@
 // search.js
-
 document.getElementById('searchBtn').addEventListener('click', performSearch);
 document.getElementById('searchInput').addEventListener('keypress', e => {
   if (e.key === 'Enter') performSearch();
@@ -12,7 +11,6 @@ async function performSearch() {
     container.innerHTML = '<div class="empty-state"><i class="fas fa-search"></i><p>请输入关键词</p></div>';
     return;
   }
-
   container.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><p>搜索中...</p></div>';
   try {
     const res = await fetch(`http://localhost:5000/api/restaurants/search?keyword=${encodeURIComponent(term)}`);
@@ -33,16 +31,17 @@ function renderSearchRestaurantCard(restaurant, container) {
   const meituanPrice = restaurant.prices.meituan.current;
   const elePrice = restaurant.prices.ele.current;
   const recommendedPlatform = meituanPrice <= elePrice ? 'meituan' : 'ele';
-
   const card = document.createElement('div');
   card.className = 'restaurant-card';
-  card.setAttribute('data-name', restaurant.name); // 改为使用店铺名称
+  card.setAttribute('data-name', restaurant.name);
+  // 👇 关键修改
+  const isFavorite = userFavorites.has(restaurant.name);
   card.innerHTML = `
     <div class="restaurant-image" style="background-image: url('${restaurant.image}')"></div>
     <div class="restaurant-info">
       <div class="restaurant-name">
         ${restaurant.name}
-        <button class="favorite-btn ${restaurant.isFavorite ? 'active' : ''}" data-name="${restaurant.name}">
+        <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-name="${restaurant.name}">
           <i class="fas fa-heart"></i>
         </button>
       </div>
@@ -73,7 +72,6 @@ function renderSearchRestaurantCard(restaurant, container) {
     </div>
   `;
   container.appendChild(card);
-
   card.querySelector('.favorite-btn').addEventListener('click', e => {
     e.stopPropagation();
     const user = localStorage.getItem('currentUser');
@@ -82,9 +80,8 @@ function renderSearchRestaurantCard(restaurant, container) {
       window.navigateTo('login');
       return;
     }
-    toggleFavorite(restaurant.name); // 传递店铺名称
+    toggleFavorite(restaurant.name);
   });
-
   card.addEventListener('click', () => {
     if (typeof window.showRestaurantDetails === 'function') {
       window.showRestaurantDetails(restaurant);
@@ -92,10 +89,4 @@ function renderSearchRestaurantCard(restaurant, container) {
   });
 }
 
-window.addEventListener('favoriteUpdated', e => {
-  const { restaurantName, isFavorite } = e.detail; // 改为 restaurantName
-  const btns = document.querySelectorAll(`.favorite-btn[data-name="${restaurantName}"]`);
-  btns.forEach(btn => {
-    btn.classList.toggle('active', isFavorite);
-  });
-});
+// 已有监听器，保留即可（它会更新所有按钮）
