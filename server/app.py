@@ -243,7 +243,6 @@ def search_restaurants():
             if "ele" in prices:
                 dish_entry["ele"] = prices["ele"]
             dishes_list.append(dish_entry)
-        dishes_list = dishes_list[:10]
 
         results.append({
             "id": main_shop["shop_id"],
