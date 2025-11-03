@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from FoodPriceDB import FoodPriceDB
@@ -7,17 +6,100 @@ from utils import load_data_from_json
 from flask import send_from_directory
 
 app = Flask(__name__)
-CORS(app)  # 允许跨域（开发阶段）
+CORS(app)  # 允许跨域
 
-# 全局 db 实例（注意：实际生产应使用连接池或请求上下文）
+# 全局 db 实例
 db = None
 
-# 工具函数：从请求头获取用户 ID（简化版，正式应使用 JWT）
+# 初始化数据库（Vercel 适配）
+def init_db():
+    global db
+    if db is None:
+        db = FoodPriceDB()
+        db_path = os.getenv("DB_PATH", "/tmp/food_price.db")  # Vercel 使用 /tmp 目录
+        if not db.initialize(db_path):
+            # 如果初始化失败，尝试使用内存数据库
+            db_path = ":memory:"
+            if not db.initialize(db_path):
+                raise RuntimeError("数据库初始化失败")
+        
+        # 只在数据库为空时加载数据
+        conn = db._get_thread_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) as count FROM shops")
+        count = cursor.fetchone()["count"]
+        if count == 0:
+            # 尝试从环境变量或默认路径加载数据
+            data_path = os.getenv("DATA_PATH", "./data.json")
+            if os.path.exists(data_path):
+                load_data_from_json(db, data_path)
+
+# 确保在应用启动时初始化数据库
+init_db()
+
+# 工具函数：从请求头获取用户 ID
 def get_user_id_from_request():
     user_id = request.headers.get("X-User-ID")
     if not user_id or not user_id.isdigit():
         return None
     return int(user_id)
+
+# ========== Vercel Serverless 适配器 ==========
+
+def vercel_handler(request):
+    """Vercel Serverless 函数处理器"""
+    from flask import Request, Response
+    import json
+    
+    # 确保数据库已初始化
+    init_db()
+    
+    # 创建 Flask 请求上下文
+    with app.test_request_context(
+        path=request['path'],
+        method=request['method'],
+        headers=request.get('headers', {}),
+        query_string=request.get('query', {}),
+        json=request.get('body') if request.get('body') and request.get('headers', {}).get('content-type') == 'application/json' else None,
+        data=request.get('body') if not request.get('headers', {}).get('content-type') == 'application/json' else None
+    ):
+        try:
+            # 执行 Flask 路由处理
+            response = app.full_dispatch_request()
+            
+            # 构建 Vercel 响应格式
+            vercel_response = {
+                'statusCode': response.status_code,
+                'headers': {
+                    'Content-Type': response.content_type,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                    'Access-Control-Allow-Headers': 'Content-Type, X-User-ID'
+                },
+                'body': response.get_data(as_text=True)
+            }
+            
+            return vercel_response
+            
+        except Exception as e:
+            # 错误处理
+            return {
+                'statusCode': 500,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                'body': json.dumps({
+                    'success': False,
+                    'message': f'服务器错误: {str(e)}'
+                })
+            }
+
+# ========== 健康检查接口 ==========
+
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    return jsonify({"success": True, "message": "服务正常运行"})
 
 # ========== 认证接口 ==========
 
@@ -73,7 +155,7 @@ def get_image_url(meituan_data, ele_data):
     def safe_image(row):
         if row is None:
             return None
-        url = row["image_url"]  # sqlite3.Row 使用 []
+        url = row["image_url"]
         return url if url not in (None, "") else None
 
     mt_url = safe_image(meituan_data)
@@ -220,7 +302,7 @@ def get_favorites():
                 "meituan": min_order_meituan,
                 "ele": min_order_ele
             },
-            "image": image_url,  # ← 使用真实 URL
+            "image": image_url,
             "prices": {
                 "meituan": {"current": avg_meituan} if avg_meituan is not None else None,
                 "ele": {"current": avg_ele} if avg_ele is not None else None
@@ -432,7 +514,7 @@ def search_restaurants():
                 "meituan": min_order_meituan,
                 "ele": min_order_ele
             },
-            "image": image_url,  # ← 使用真实 URL
+            "image": image_url,
             "prices": {
                 "meituan": {"current": avg_meituan} if avg_meituan is not None else None,
                 "ele": {"current": avg_ele} if avg_ele is not None else None
@@ -457,25 +539,12 @@ def compare_dish():
     success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
-# 前端文件放在与 app.py 同级的 ../frontend/ 目录（可根据实际情况修改）
-FRONTEND_DIR = os.path.join(os.path.dirname(__file__), '..', 'frontend')
+# ========== Vercel 启动配置 ==========
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve_frontend(path):
-    if path != "" and os.path.exists(os.path.join(FRONTEND_DIR, path)):
-        return send_from_directory(FRONTEND_DIR, path)
-    else:
-        # 对于未匹配的路径（如 /auth/callback），回退到 index.html（适用于 SPA 路由）
-        return send_from_directory(FRONTEND_DIR, 'index.html')
-# ========== 启动 ==========
+# Vercel Serverless 函数入口点
+def handler(request, context):
+    return vercel_handler(request)
 
+# 本地开发启动
 if __name__ == '__main__':
-    db = FoodPriceDB()
-    db_path = os.getenv("DB_PATH", "food_price.db")
-    if not db.initialize(db_path):
-        raise RuntimeError("数据库初始化失败")
-    # db.clear_all_data()
-
-    # load_data_from_json(db, "./data.json")
     app.run(host='0.0.0.0', port=5000, debug=True)
