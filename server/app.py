@@ -450,7 +450,6 @@ def compare_dish():
 # ========== 启动 ==========
 
 if __name__ == '__main__':
-    global db
     db = FoodPriceDB()
     db_path = os.getenv("DB_PATH", "food_price.db")
     if not db.initialize(db_path):
