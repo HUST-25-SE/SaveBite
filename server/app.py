@@ -1,28 +1,46 @@
 # app.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, g
 from flask_cors import CORS
 from FoodPriceDB import FoodPriceDB
-import os, random
+import os
+import random
 from utils import load_data_from_json
 from flask import send_from_directory
 
 app = Flask(__name__)
-CORS(app)  # 允许跨域（开发阶段）
+CORS(app)
 
-# 全局 db 实例（注意：实际生产应使用连接池或请求上下文）
-db = None
+# ========== 数据库初始化逻辑（延迟 + 每请求一次）==========
+def get_db():
+    """
+    获取当前请求的 db 实例（Flask g 对象确保线程/请求隔离）
+    """
+    if 'db' not in g:
+        db_path = os.getenv("DB_PATH", "food_price.db")
+        g.db = FoodPriceDB()
+        if not g.db.initialize(db_path):
+            raise RuntimeError("数据库初始化失败")
+    return g.db
 
-# 工具函数：从请求头获取用户 ID（简化版，正式应使用 JWT）
+@app.teardown_appcontext
+def close_db(error):
+    """请求结束时自动清理（可选，SQLite 无强连接需关闭，但保持良好习惯）"""
+    db = g.pop('db', None)
+    if db is not None:
+        # 如果 FoodPriceDB 有 close 方法，可在此调用
+        pass
+
+# ========== 工具函数：保持不变 ==========
 def get_user_id_from_request():
     user_id = request.headers.get("X-User-ID")
     if not user_id or not user_id.isdigit():
         return None
     return int(user_id)
 
-# ========== 认证接口 ==========
-
+# ========== 认证接口（仅在函数开头加一行 db = get_db()）==========
 @app.route('/api/auth/register', methods=['POST'])
 def register():
+    db = get_db()  # ← 关键：获取当前请求的 db 实例
     data = request.json
     username = data.get('username')
     email = data.get('email')
@@ -39,6 +57,7 @@ def register():
 
 @app.route('/api/auth/login', methods=['POST'])
 def login():
+    db = get_db()
     data = request.json
     username = data.get('username')
     password = data.get('password')
@@ -57,6 +76,7 @@ def login():
 
 @app.route('/api/auth/me', methods=['GET'])
 def me():
+    db = get_db()
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
@@ -67,28 +87,9 @@ def me():
         return jsonify({"success": False, "message": "用户不存在"}), 404
 
 # ========== 收藏接口 ==========
-
-def get_image_url(meituan_data, ele_data):
-    """优先使用美团图片，其次饿了么，最后回退到 placeholder"""
-    def safe_image(row):
-        if row is None:
-            return None
-        url = row["image_url"]  # sqlite3.Row 使用 []
-        return url if url not in (None, "") else None
-
-    mt_url = safe_image(meituan_data)
-    ele_url = safe_image(ele_data)
-
-    if mt_url:
-        return mt_url
-    if ele_url:
-        return ele_url
-
-    shop_name = (meituan_data or ele_data)["shop_name"]
-    return f"https://via.placeholder.com/300x160?text={shop_name}"
-
 @app.route('/api/user/favorites', methods=['GET'])
 def get_favorites():
+    db = get_db()
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
@@ -104,7 +105,6 @@ def get_favorites():
     cursor = conn.cursor()
 
     favorite_shop_names = list(set(fav["shop_name"] for fav in favorites))
-
     placeholders = ','.join('?' * len(favorite_shop_names))
     cursor.execute(f"""
         SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
@@ -205,7 +205,21 @@ def get_favorites():
                 dish_entry["ele"] = prices["ele"]
             dishes_list.append(dish_entry)
 
-        # 使用真实 image_url
+        def get_image_url(meituan_data, ele_data):
+            def safe_image(row):
+                if row is None:
+                    return None
+                url = row["image_url"]
+                return url if url not in (None, "") else None
+            mt_url = safe_image(meituan_data)
+            ele_url = safe_image(ele_data)
+            if mt_url:
+                return mt_url
+            if ele_url:
+                return ele_url
+            shop_name = (meituan_data or ele_data)["shop_name"]
+            return f"https://via.placeholder.com/300x160?text={shop_name}"
+
         image_url = get_image_url(meituan_data, ele_data)
 
         result.append({
@@ -220,7 +234,7 @@ def get_favorites():
                 "meituan": min_order_meituan,
                 "ele": min_order_ele
             },
-            "image": image_url,  # ← 使用真实 URL
+            "image": image_url,
             "prices": {
                 "meituan": {"current": avg_meituan} if avg_meituan is not None else None,
                 "ele": {"current": avg_ele} if avg_ele is not None else None
@@ -233,6 +247,7 @@ def get_favorites():
 
 @app.route('/api/favorite/toggle', methods=['POST'])
 def toggle_favorite():
+    db = get_db()
     user_id = get_user_id_from_request()
     if not user_id:
         return jsonify({"success": False, "message": "未登录"}), 401
@@ -266,28 +281,22 @@ def toggle_favorite():
     has_any_favorite = len(already_favorited) > 0
 
     if has_any_favorite:
-        removed_count = 0
         for sid in same_name_shop_ids:
-            success, msg = db.remove_favorite(user_id, sid)
-            if success:
-                removed_count += 1
+            db.remove_favorite(user_id, sid)
         is_favorite = False
         message = "取消收藏成功"
     else:
-        added_count = 0
         for sid in same_name_shop_ids:
-            success, msg = db.add_favorite(user_id, sid)
-            if success:
-                added_count += 1
+            db.add_favorite(user_id, sid)
         is_favorite = True
         message = "收藏成功"
 
     return jsonify({"success": True, "isFavorite": is_favorite})
 
 # ========== 搜索接口 ==========
-
 @app.route('/api/restaurants/search', methods=['GET'])
 def search_restaurants():
+    db = get_db()
     keyword = request.args.get('keyword', '').strip()
     user_id = get_user_id_from_request()
 
@@ -388,7 +397,8 @@ def search_restaurants():
         delivery_time_str = f"{max(10, delivery_time_val - 5)}-{(delivery_time_val or 35) + 5}分钟" \
             if delivery_time_val else "30-40分钟"
 
-        dish_name_to_platforms = defaultdict(dict)
+        from collections import defaultdict as dd
+        dish_name_to_platforms = dd(dict)
         shop_ids = []
         if meituan_data:
             shop_ids.append(meituan_data["shop_id"])
@@ -417,7 +427,21 @@ def search_restaurants():
                     is_favorite = True
                     break
 
-        # 使用真实 image_url
+        def get_image_url(meituan_data, ele_data):
+            def safe_image(row):
+                if row is None:
+                    return None
+                url = row["image_url"]
+                return url if url not in (None, "") else None
+            mt_url = safe_image(meituan_data)
+            ele_url = safe_image(ele_data)
+            if mt_url:
+                return mt_url
+            if ele_url:
+                return ele_url
+            shop_name = (meituan_data or ele_data)["shop_name"]
+            return f"https://via.placeholder.com/300x160?text={shop_name}"
+
         image_url = get_image_url(meituan_data, ele_data)
 
         results.append({
@@ -432,7 +456,7 @@ def search_restaurants():
                 "meituan": min_order_meituan,
                 "ele": min_order_ele
             },
-            "image": image_url,  # ← 使用真实 URL
+            "image": image_url,
             "prices": {
                 "meituan": {"current": avg_meituan} if avg_meituan is not None else None,
                 "ele": {"current": avg_ele} if avg_ele is not None else None
@@ -447,9 +471,9 @@ def search_restaurants():
     return jsonify({"success": True, "restaurants": results})
 
 # ========== 比价接口 ==========
-
 @app.route('/api/dish/compare', methods=['GET'])
 def compare_dish():
+    db = get_db()
     dish_name = request.args.get('dish_name')
     shop_name = request.args.get('shop_name')
     if not dish_name:
@@ -457,7 +481,7 @@ def compare_dish():
     success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
-# 前端文件放在与 app.py 同级的 ../frontend/ 目录（可根据实际情况修改）
+# ========== 前端静态文件 ==========
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), '..', 'frontend')
 
 @app.route('/', defaults={'path': ''})
@@ -466,16 +490,8 @@ def serve_frontend(path):
     if path != "" and os.path.exists(os.path.join(FRONTEND_DIR, path)):
         return send_from_directory(FRONTEND_DIR, path)
     else:
-        # 对于未匹配的路径（如 /auth/callback），回退到 index.html（适用于 SPA 路由）
         return send_from_directory(FRONTEND_DIR, 'index.html')
-# ========== 启动 ==========
 
+# ========== 启动（仅用于本地开发）==========
 if __name__ == '__main__':
-    db = FoodPriceDB()
-    db_path = os.getenv("DB_PATH", "food_price.db")
-    if not db.initialize(db_path):
-        raise RuntimeError("数据库初始化失败")
-    # db.clear_all_data()
-
-    # load_data_from_json(db, "./data.json")
     app.run(host='0.0.0.0', port=5000, debug=True)
