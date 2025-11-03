@@ -21,7 +21,7 @@ CORS(app)  # 允许跨域
 # 全局 db 实例
 db = None
 
-# 在 init_database() 函数中修改数据库路径
+# 在 init_database() 函数中
 def init_database():
     """初始化数据库"""
     global db
@@ -34,28 +34,21 @@ def init_database():
         # Vercel 环境下使用临时数据库路径
         db_path = "/tmp/food_price.db"
         
-        # 确保 /tmp 目录存在（在 Vercel 中已经存在）
         if not db.initialize(db_path):
             return False, "数据库初始化失败"
             
-        # 如果是新数据库，加载数据
+        # 检查是否需要加载数据
         conn = db._get_thread_connection()
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM shops")
         shop_count = cursor.fetchone()[0]
         
         if shop_count == 0 and load_data_from_json is not None:
-            # 尝试从 server 目录的 data.json 加载数据
+            # 尝试加载数据
             data_file = os.path.join(os.path.dirname(__file__), "data.json")
             if os.path.exists(data_file):
                 load_data_from_json(db, data_file)
                 print("数据加载成功")
-            else:
-                # 如果 server/data.json 不存在，尝试根目录的 data.json
-                root_data_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data.json")
-                if os.path.exists(root_data_file):
-                    load_data_from_json(db, root_data_file)
-                    print("从根目录加载数据成功")
         
         return True, "数据库初始化成功"
         
