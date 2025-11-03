@@ -247,15 +247,18 @@ def toggle_favorite():
 
 # ========== 搜索接口 ==========
 
+# ========== 搜索接口 ==========
 @app.route('/api/restaurants/search', methods=['GET'])
 def search_restaurants():
     keyword = request.args.get('keyword', '').strip()
+    
+    # 获取当前用户 ID（可能为 None）
+    user_id = get_user_id_from_request()
 
     conn = db._get_thread_connection()
     cursor = conn.cursor()
 
     if keyword:
-        # 原有搜索逻辑
         cursor.execute("""
             SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
                    s.delivery_distance, s.delivery_time,
@@ -266,7 +269,6 @@ def search_restaurants():
             ORDER BY s.shop_name, p.platform_name
         """, (f"%{keyword}%",))
     else:
-        # 首页推荐：返回所有店铺（可加 LIMIT 限制数量，比如 50 家足够聚合）
         cursor.execute("""
             SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
                    s.delivery_distance, s.delivery_time,
@@ -274,7 +276,7 @@ def search_restaurants():
             FROM shops s
             JOIN platforms p ON s.platform_id = p.platform_id
             ORDER BY s.monthly_sales DESC, s.rating DESC
-            LIMIT 50  -- 防止数据量过大，首页推荐只需少量热门店铺
+            LIMIT 50
         """)
 
     shop_rows = cursor.fetchall()
@@ -284,10 +286,11 @@ def search_restaurants():
     for row in shop_rows:
         grouped_shops[row["shop_name"]].append(row)
 
-    # 提前收集所有 shop_id，用于批量查询菜品
+    # 所有 shop_id（用于查菜品 和 收藏状态）
     all_shop_ids = [row["shop_id"] for row in shop_rows]
     dish_map = {}
 
+    # 批量查菜品
     if all_shop_ids:
         placeholders = ','.join('?' * len(all_shop_ids))
         cursor.execute(f"""
@@ -305,6 +308,14 @@ def search_restaurants():
                 "name": dish["dish_name"],
                 "price": round(dish["price"], 2)
             })
+
+    # === 新增：查询用户的收藏 shop_id 集合 ===
+    user_favorite_shop_ids = set()
+    if user_id:
+        cursor.execute("""
+            SELECT shop_id FROM user_favorites WHERE user_id = ?
+        """, (user_id,))
+        user_favorite_shop_ids = {row["shop_id"] for row in cursor.fetchall()}
 
     results = []
     for shop_name, platforms in grouped_shops.items():
@@ -329,12 +340,12 @@ def search_restaurants():
         avg_meituan = None
         avg_ele = None
 
-        if meituan_data:
+        if meituan_
             mt_dishes = dish_map.get(meituan_data["shop_id"], [])
             if mt_dishes:
                 avg_meituan = round(sum(d["price"] for d in mt_dishes) / len(mt_dishes), 2)
 
-        if ele_data:
+        if ele_
             ele_dishes = dish_map.get(ele_data["shop_id"], [])
             if ele_dishes:
                 avg_ele = round(sum(d["price"] for d in ele_dishes) / len(ele_dishes), 2)
@@ -348,9 +359,9 @@ def search_restaurants():
 
         dish_name_to_platforms = defaultdict(dict)
         shop_ids = []
-        if meituan_data:
+        if meituan_
             shop_ids.append(meituan_data["shop_id"])
-        if ele_data:
+        if ele_
             shop_ids.append(ele_data["shop_id"])
 
         for shop_id in shop_ids:
@@ -368,7 +379,15 @@ def search_restaurants():
                 dish_entry["ele"] = prices["ele"]
             dishes_list.append(dish_entry)
 
-        # 注意：首页推荐暂不查是否已收藏（因未传 user_id），默认 isFavorite=False
+        # === 新增：判断是否收藏 ===
+        is_favorite = False
+        if user_id:
+            # 只要任一平台的 shop_id 被收藏，就算收藏
+            for sid in shop_ids:
+                if sid in user_favorite_shop_ids:
+                    is_favorite = True
+                    break
+
         results.append({
             "id": main_shop["shop_id"],
             "name": shop_name,
@@ -386,12 +405,12 @@ def search_restaurants():
                 "meituan": {"current": avg_meituan} if avg_meituan is not None else None,
                 "ele": {"current": avg_ele} if avg_ele is not None else None
             },
-            "isFavorite": False,
+            "isFavorite": is_favorite,
             "dishes": dishes_list
         })
 
-    # 如果是首页（无 keyword），可再限制返回数量（如前 6 家）
-    if not keyword and len(results)> 6:
+    # 首页随机选 6 个
+    if not keyword and len(results) > 6:
         results = random.sample(results, 6)
 
     return jsonify({"success": True, "restaurants": results})
