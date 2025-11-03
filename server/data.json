@@ -669,6 +669,12 @@
     {
       "platform_name": "美团",
       "shop_name": "吉野家(武汉世界城广场)",
+      "dish_name": "随心选四件套B",
+      "price": 26
+    },
+    {
+      "platform_name": "美团",
+      "shop_name": "吉野家(武汉世界城广场)",
       "dish_name": "招牌牛肉饭二件套",
       "price": 23
     },
