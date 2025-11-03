@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from FoodPriceDB import FoodPriceDB
+from .FoodPriceDB import FoodPriceDB
 import os, random
-from utils import load_data_from_json
+from .utils import load_data_from_json
 from flask import send_from_directory
 
 app = Flask(__name__)
