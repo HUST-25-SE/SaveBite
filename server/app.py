@@ -1,10 +1,17 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from .FoodPriceDB import FoodPriceDB
 import os, random
-from .utils import load_data_from_json
 from flask import send_from_directory
+import sys
+from pathlib import Path
+# 将项目根目录（即 server 的父目录）加入 Python 路径
+ROOT_DIR = Path(__file__).parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
+# 现在可以正常导入 server.xxx
+from server.FoodPriceDB import FoodPriceDB
+from server.utils import load_data_from_json
 app = Flask(__name__)
 CORS(app)  # 允许跨域
 
