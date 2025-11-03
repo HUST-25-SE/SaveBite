@@ -1,4 +1,4 @@
-// favourite.js
+// favourites.js
 
 async function renderFavoritesPage() {
   const container = document.getElementById('favoritesList');
@@ -42,13 +42,13 @@ function renderFavoriteRestaurantCard(restaurant, container) {
 
   const card = document.createElement('div');
   card.className = 'restaurant-card';
-  card.setAttribute('data-id', restaurant.id);
+  card.setAttribute('data-name', restaurant.name); // 改为使用店铺名称
   card.innerHTML = `
     <div class="restaurant-image" style="background-image: url('${restaurant.image}')"></div>
     <div class="restaurant-info">
       <div class="restaurant-name">
         ${restaurant.name}
-        <button class="favorite-btn active" data-id="${restaurant.id}">
+        <button class="favorite-btn active" data-name="${restaurant.name}">
           <i class="fas fa-heart"></i>
         </button>
       </div>
@@ -82,7 +82,7 @@ function renderFavoriteRestaurantCard(restaurant, container) {
 
   card.querySelector('.favorite-btn').addEventListener('click', e => {
     e.stopPropagation();
-    toggleFavorite(restaurant.id);
+    toggleFavorite(restaurant.name); // 传递店铺名称而不是ID
     card.remove();
     // 若为空，显示空状态
     if (document.querySelectorAll('#favoritesResultList .restaurant-card').length === 0) {
@@ -98,7 +98,7 @@ function renderFavoriteRestaurantCard(restaurant, container) {
 }
 
 window.addEventListener('favoriteUpdated', e => {
-  const { restaurantId, isFavorite } = e.detail;
+  const { restaurantName, isFavorite } = e.detail; // 改为 restaurantName
   if (document.getElementById('favorites').classList.contains('active') && !isFavorite) {
     renderFavoritesPage();
   }

@@ -36,13 +36,13 @@ function renderSearchRestaurantCard(restaurant, container) {
 
   const card = document.createElement('div');
   card.className = 'restaurant-card';
-  card.setAttribute('data-id', restaurant.id);
+  card.setAttribute('data-name', restaurant.name); // 改为使用店铺名称
   card.innerHTML = `
     <div class="restaurant-image" style="background-image: url('${restaurant.image}')"></div>
     <div class="restaurant-info">
       <div class="restaurant-name">
         ${restaurant.name}
-        <button class="favorite-btn ${restaurant.isFavorite ? 'active' : ''}" data-id="${restaurant.id}">
+        <button class="favorite-btn ${restaurant.isFavorite ? 'active' : ''}" data-name="${restaurant.name}">
           <i class="fas fa-heart"></i>
         </button>
       </div>
@@ -82,7 +82,7 @@ function renderSearchRestaurantCard(restaurant, container) {
       window.navigateTo('login');
       return;
     }
-    toggleFavorite(restaurant.id);
+    toggleFavorite(restaurant.name); // 传递店铺名称
   });
 
   card.addEventListener('click', () => {
@@ -93,8 +93,8 @@ function renderSearchRestaurantCard(restaurant, container) {
 }
 
 window.addEventListener('favoriteUpdated', e => {
-  const { restaurantId, isFavorite } = e.detail;
-  const btns = document.querySelectorAll(`.favorite-btn[data-id="${restaurantId}"]`);
+  const { restaurantName, isFavorite } = e.detail; // 改为 restaurantName
+  const btns = document.querySelectorAll(`.favorite-btn[data-name="${restaurantName}"]`);
   btns.forEach(btn => {
     btn.classList.toggle('active', isFavorite);
   });

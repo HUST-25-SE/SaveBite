@@ -64,8 +64,8 @@ function generateStars(rating) {
   return stars;
 }
 
-// 切换收藏（调用后端）
-async function toggleFavorite(restaurantId) {
+// 切换收藏（调用后端，使用店铺名称）
+async function toggleFavorite(restaurantName) {
   const user = localStorage.getItem('currentUser');
   if (!user) {
     alert('请先登录');
@@ -80,17 +80,17 @@ async function toggleFavorite(restaurantId) {
         'Content-Type': 'application/json',
         'X-User-ID': userData.user_id
       },
-      body: JSON.stringify({ shop_id: restaurantId })
+      body: JSON.stringify({ shop_name: restaurantName }) // 改为使用店铺名称
     });
     const data = await res.json();
     if (data.success) {
-      const btns = document.querySelectorAll(`.favorite-btn[data-id="${restaurantId}"]`);
+      const btns = document.querySelectorAll(`.favorite-btn[data-name="${restaurantName}"]`);
       btns.forEach(btn => {
         btn.classList.toggle('active', data.isFavorite);
       });
       // 更新模态框按钮（如果打开）
       const modalBtn = document.getElementById('modalFavoriteBtn');
-      if (modalBtn && modalBtn.dataset.restaurantId == restaurantId) {
+      if (modalBtn && modalBtn.dataset.restaurantName == restaurantName) {
         modalBtn.classList.toggle('active', data.isFavorite);
         modalBtn.innerHTML = data.isFavorite ?
           '<i class="fas fa-heart"></i> 已收藏' :
@@ -98,7 +98,7 @@ async function toggleFavorite(restaurantId) {
       }
       // 触发事件供其他页面监听
       window.dispatchEvent(new CustomEvent('favoriteUpdated', {
-        detail: { restaurantId, isFavorite: data.isFavorite }
+        detail: { restaurantName, isFavorite: data.isFavorite } // 改为 restaurantName
       }));
     } else {
       alert('操作失败: ' + data.message);
@@ -116,13 +116,13 @@ function renderRestaurantCard(restaurant, container) {
 
   const card = document.createElement('div');
   card.className = 'restaurant-card';
-  card.setAttribute('data-id', restaurant.id);
+  card.setAttribute('data-name', restaurant.name); // 改为使用店铺名称
   card.innerHTML = `
     <div class="restaurant-image" style="background-image: url('${restaurant.image}')"></div>
     <div class="restaurant-info">
       <div class="restaurant-name">
         ${restaurant.name}
-        <button class="favorite-btn ${restaurant.isFavorite ? 'active' : ''}" data-id="${restaurant.id}">
+        <button class="favorite-btn ${restaurant.isFavorite ? 'active' : ''}" data-name="${restaurant.name}">
           <i class="fas fa-heart"></i>
         </button>
       </div>
@@ -156,7 +156,7 @@ function renderRestaurantCard(restaurant, container) {
 
   card.querySelector('.favorite-btn').addEventListener('click', e => {
     e.stopPropagation();
-    toggleFavorite(restaurant.id);
+    toggleFavorite(restaurant.name); // 传递店铺名称
   });
   card.addEventListener('click', () => {
     showRestaurantDetails(restaurant);
@@ -182,7 +182,6 @@ function showRestaurantDetails(restaurant) {
   const dishesList = document.getElementById('dishesList');
   dishesList.innerHTML = '';
   (restaurant.dishes || []).forEach(dish => {
-    // 🔧 修复：正确读取菜品价格（字段在顶层，不是 prices 下）
     const dishMeituan = dish.meituan != null ? parseFloat(dish.meituan) : Infinity;
     const dishEle = dish.ele != null ? parseFloat(dish.ele) : Infinity;
 
@@ -211,11 +210,12 @@ function showRestaurantDetails(restaurant) {
   modalBtn.innerHTML = restaurant.isFavorite ?
     '<i class="fas fa-heart"></i> 已收藏' :
     '<i class="fas fa-heart"></i> 收藏';
-  modalBtn.dataset.restaurantId = restaurant.id;
-  modalBtn.onclick = () => toggleFavorite(restaurant.id);
+  modalBtn.dataset.restaurantName = restaurant.name; // 改为使用店铺名称
+  modalBtn.onclick = () => toggleFavorite(restaurant.name);
 
   modal.style.display = 'block';
 }
+
 // 首页初始化
 function initHomePage() {
   initCarousel();
