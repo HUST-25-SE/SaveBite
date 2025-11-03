@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os, random
-from flask import send_from_directory
 import sys
 from pathlib import Path
+from collections import defaultdict
+
 # 将项目根目录（即 server 的父目录）加入 Python 路径
 ROOT_DIR = Path(__file__).parent.parent
 if str(ROOT_DIR) not in sys.path:
@@ -12,6 +13,7 @@ if str(ROOT_DIR) not in sys.path:
 # 现在可以正常导入 server.xxx
 from server.FoodPriceDB import FoodPriceDB
 from server.utils import load_data_from_json
+
 app = Flask(__name__)
 CORS(app)  # 允许跨域
 
@@ -51,56 +53,17 @@ def get_user_id_from_request():
         return None
     return int(user_id)
 
-# ========== Vercel Serverless 适配器 ==========
+# ========== 静态文件服务 ==========
 
-def vercel_handler(request):
-    """Vercel Serverless 函数处理器"""
-    from flask import Request, Response
-    import json
-    
-    # 确保数据库已初始化
-    init_db()
-    
-    # 创建 Flask 请求上下文
-    with app.test_request_context(
-        path=request['path'],
-        method=request['method'],
-        headers=request.get('headers', {}),
-        query_string=request.get('query', {}),
-        json=request.get('body') if request.get('body') and request.get('headers', {}).get('content-type') == 'application/json' else None,
-        data=request.get('body') if not request.get('headers', {}).get('content-type') == 'application/json' else None
-    ):
-        try:
-            # 执行 Flask 路由处理
-            response = app.full_dispatch_request()
-            
-            # 构建 Vercel 响应格式
-            vercel_response = {
-                'statusCode': response.status_code,
-                'headers': {
-                    'Content-Type': response.content_type,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-                    'Access-Control-Allow-Headers': 'Content-Type, X-User-ID'
-                },
-                'body': response.get_data(as_text=True)
-            }
-            
-            return vercel_response
-            
-        except Exception as e:
-            # 错误处理
-            return {
-                'statusCode': 500,
-                'headers': {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
-                },
-                'body': json.dumps({
-                    'success': False,
-                    'message': f'服务器错误: {str(e)}'
-                })
-            }
+@app.route('/', methods=['GET'])
+def serve_frontend_index():
+    """服务前端首页"""
+    return send_from_directory('../frontend', 'index.html')
+
+@app.route('/<path:path>')
+def serve_static_files(path):
+    """服务前端静态文件"""
+    return send_from_directory('../frontend', path)
 
 # ========== 健康检查接口 ==========
 
@@ -207,7 +170,6 @@ def get_favorites():
 
     all_shops = cursor.fetchall()
 
-    from collections import defaultdict
     grouped_shops = defaultdict(list)
     for row in all_shops:
         grouped_shops[row["shop_name"]].append(row)
@@ -406,7 +368,6 @@ def search_restaurants():
 
     shop_rows = cursor.fetchall()
 
-    from collections import defaultdict
     grouped_shops = defaultdict(list)
     for row in shop_rows:
         grouped_shops[row["shop_name"]].append(row)
@@ -546,11 +507,10 @@ def compare_dish():
     success, results = db.compare_dish_price(dish_name=dish_name, shop_name=shop_name, exact=False)
     return jsonify({"success": success, "results": results if success else str(results)})
 
-# ========== Vercel 启动配置 ==========
+# ========== Vercel 适配 ==========
 
-# Vercel Serverless 函数入口点
-def handler(request, context):
-    return vercel_handler(request)
+# Vercel 需要这个 WSGI 应用实例
+application = app
 
 # 本地开发启动
 if __name__ == '__main__':
