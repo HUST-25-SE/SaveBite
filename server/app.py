@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from FoodPriceDB import FoodPriceDB
-import os
+import os, random
 from utils import load_data_from_json
 app = Flask(__name__)
 CORS(app)  # 允许跨域（开发阶段）
@@ -133,22 +133,32 @@ def toggle_favorite():
 @app.route('/api/restaurants/search', methods=['GET'])
 def search_restaurants():
     keyword = request.args.get('keyword', '').strip()
-    if not keyword:
-        return jsonify({"success": True, "restaurants": []})
 
     conn = db._get_thread_connection()
     cursor = conn.cursor()
 
-    # 第一步：获取匹配的店铺（含 delivery_distance, delivery_time）
-    cursor.execute("""
-        SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
-               s.delivery_distance, s.delivery_time,
-               p.platform_name
-        FROM shops s
-        JOIN platforms p ON s.platform_id = p.platform_id
-        WHERE s.shop_name LIKE ?
-        ORDER BY s.shop_name, p.platform_name
-    """, (f"%{keyword}%",))
+    if keyword:
+        # 原有搜索逻辑
+        cursor.execute("""
+            SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
+                   s.delivery_distance, s.delivery_time,
+                   p.platform_name
+            FROM shops s
+            JOIN platforms p ON s.platform_id = p.platform_id
+            WHERE s.shop_name LIKE ?
+            ORDER BY s.shop_name, p.platform_name
+        """, (f"%{keyword}%",))
+    else:
+        # 首页推荐：返回所有店铺（可加 LIMIT 限制数量，比如 50 家足够聚合）
+        cursor.execute("""
+            SELECT s.shop_id, s.shop_name, s.rating, s.delivery_fee, s.min_order, s.monthly_sales,
+                   s.delivery_distance, s.delivery_time,
+                   p.platform_name
+            FROM shops s
+            JOIN platforms p ON s.platform_id = p.platform_id
+            ORDER BY s.monthly_sales DESC, s.rating DESC
+            LIMIT 50  -- 防止数据量过大，首页推荐只需少量热门店铺
+        """)
 
     shop_rows = cursor.fetchall()
 
@@ -159,7 +169,7 @@ def search_restaurants():
 
     # 提前收集所有 shop_id，用于批量查询菜品
     all_shop_ids = [row["shop_id"] for row in shop_rows]
-    dish_map = {}  # shop_id -> list of dishes
+    dish_map = {}
 
     if all_shop_ids:
         placeholders = ','.join('?' * len(all_shop_ids))
@@ -184,7 +194,6 @@ def search_restaurants():
         meituan_data = next((p for p in platforms if p["platform_name"] == "美团"), None)
         ele_data = next((p for p in platforms if p["platform_name"] == "饿了么"), None)
 
-        # 主店铺用于 distance / deliveryTime
         main_shop = meituan_data or ele_data
         if not main_shop:
             continue
@@ -200,7 +209,6 @@ def search_restaurants():
         min_order_meituan = meituan_data["min_order"] if meituan_data else None
         min_order_ele = ele_data["min_order"] if ele_data else None
 
-        # === 计算两个平台的菜品均价 ===
         avg_meituan = None
         avg_ele = None
 
@@ -221,7 +229,6 @@ def search_restaurants():
         delivery_time_str = f"{max(10, delivery_time_val - 5)}-{(delivery_time_val or 35) + 5}分钟" \
             if delivery_time_val else "30-40分钟"
 
-        # === 构建 dishes 列表（保持不变）===
         dish_name_to_platforms = defaultdict(dict)
         shop_ids = []
         if meituan_data:
@@ -244,6 +251,7 @@ def search_restaurants():
                 dish_entry["ele"] = prices["ele"]
             dishes_list.append(dish_entry)
 
+        # 注意：首页推荐暂不查是否已收藏（因未传 user_id），默认 isFavorite=False
         results.append({
             "id": main_shop["shop_id"],
             "name": shop_name,
@@ -251,7 +259,7 @@ def search_restaurants():
             "reviews": monthly_sales,
             "distance": distance_str,
             "deliveryTime": delivery_time_str,
-            "deliveryFee": f"¥{(meituan_data['delivery_fee']+ele_data['delivery_fee'])/2}" if meituan_data and ele_data else "¥0.0",
+            "deliveryFee": f"¥{((meituan_data['delivery_fee'] if meituan_data else 0) + (ele_data['delivery_fee'] if ele_data else 0)) / 2:.1f}",
             "minimumOrder": {
                 "meituan": min_order_meituan,
                 "ele": min_order_ele
@@ -264,6 +272,11 @@ def search_restaurants():
             "isFavorite": False,
             "dishes": dishes_list
         })
+
+    # 如果是首页（无 keyword），可再限制返回数量（如前 6 家）
+    if not keyword:
+        results = random.sample(results, 6) if len(results) > 6
+
     return jsonify({"success": True, "restaurants": results})
 # ========== 比价接口（可选） ==========
 
