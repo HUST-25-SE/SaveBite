@@ -38,10 +38,29 @@ def init_db():
         cursor.execute("SELECT COUNT(*) as count FROM shops")
         count = cursor.fetchone()["count"]
         if count == 0:
-            # 尝试从环境变量或默认路径加载数据
-            data_path = os.getenv("DATA_PATH", "./data.json")
-            if os.path.exists(data_path):
-                load_data_from_json(db, data_path)
+            # 尝试从多个可能的位置加载数据
+            possible_paths = [
+                "./server/data.json",  # 相对路径
+                "server/data.json",    # 相对路径
+                "/tmp/data.json",      # Vercel 临时目录
+                "data.json"            # 根目录
+            ]
+            
+            data_loaded = False
+            for data_path in possible_paths:
+                try:
+                    if os.path.exists(data_path):
+                        print(f"从 {data_path} 加载数据...")
+                        load_data_from_json(db, data_path)
+                        data_loaded = True
+                        print("数据加载成功")
+                        break
+                except Exception as e:
+                    print(f"从 {data_path} 加载数据失败: {e}")
+                    continue
+            
+            if not data_loaded:
+                print("警告: 无法从任何路径加载数据文件")
 
 # 确保在应用启动时初始化数据库
 init_db()
@@ -69,7 +88,45 @@ def serve_static_files(path):
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
-    return jsonify({"success": True, "message": "服务正常运行"})
+    return jsonify({
+        "success": True, 
+        "message": "服务正常运行",
+        "data_loaded": db is not None
+    })
+
+# ========== 数据检查接口 ==========
+
+@app.route('/api/debug/data', methods=['GET'])
+def debug_data():
+    """调试接口：检查数据加载状态"""
+    if db is None:
+        return jsonify({"success": False, "message": "数据库未初始化"})
+    
+    conn = db._get_thread_connection()
+    cursor = conn.cursor()
+    
+    # 获取各表记录数
+    cursor.execute("SELECT COUNT(*) as count FROM shops")
+    shop_count = cursor.fetchone()["count"]
+    
+    cursor.execute("SELECT COUNT(*) as count FROM dishes")
+    dish_count = cursor.fetchone()["count"]
+    
+    cursor.execute("SELECT COUNT(*) as count FROM users")
+    user_count = cursor.fetchone()["count"]
+    
+    cursor.execute("SELECT COUNT(*) as count FROM user_favorites")
+    favorite_count = cursor.fetchone()["count"]
+    
+    return jsonify({
+        "success": True,
+        "data": {
+            "shops": shop_count,
+            "dishes": dish_count,
+            "users": user_count,
+            "favorites": favorite_count
+        }
+    })
 
 # ========== 认证接口 ==========
 
