@@ -1,5 +1,5 @@
 ## 部署
-[https://save-bite-omega.vercel.app/](https://save-bite-liart.vercel.app/)
+https://save-bite-liart.vercel.app/
 
 vercel部署，带宽较小，需要挂梯子访问
 
