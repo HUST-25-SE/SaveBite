@@ -493,7 +493,247 @@
       "min_order": 20,
       "avg_consumption": 0,
       "image_url":"https://youke1.picui.cn/s1/2025/11/02/69077163b135b.jpg"
-    }
+    },
+    {
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"delivery_distance": 2.9,
+"rating": 4.8,
+"delivery_time": 60,
+"delivery_fee": 0,
+"monthly_sales": 1000,
+"min_order": 10,
+"avg_consumption": 17,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a18d88e4.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"delivery_distance": 2.8,
+"rating": 4.7,
+"delivery_time": 55,
+"delivery_fee": 2,
+"monthly_sales": 900,
+"min_order": 12,
+"avg_consumption": 18,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a18d88e4.jpg "
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"delivery_distance": 0.4,
+"rating": 5.0,
+"delivery_time": 40,
+"delivery_fee": 0,
+"monthly_sales": 4000,
+"min_order": 0,
+"avg_consumption": 32,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a465ae04.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"delivery_distance": 0.4,
+"rating": 4.9,
+"delivery_time": 45,
+"delivery_fee": 1,
+"monthly_sales": 3800,
+"min_order": 0,
+"avg_consumption": 33,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a465ae04.jpg "
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"delivery_distance": 5.2,
+"rating": 5.0,
+"delivery_time": 33,
+"delivery_fee": 0.3,
+"monthly_sales": 2000,
+"min_order": 0,
+"avg_consumption": 35,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a62ab955.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"delivery_distance": 5.1,
+"rating": 4.9,
+"delivery_time": 35,
+"delivery_fee": 2.5,
+"monthly_sales": 1800,
+"min_order": 0,
+"avg_consumption": 36,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a62ab955.jpg "
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"delivery_distance": 1.0,
+"rating": 4.9,
+"delivery_time": 40,
+"delivery_fee": 0,
+"monthly_sales": 3000,
+"min_order": 20,
+"avg_consumption": 45,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a7cd2b77.jpg"
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"delivery_distance": 1.1,
+"rating": 4.8,
+"delivery_time": 45,
+"delivery_fee": 2,
+"monthly_sales": 2800,
+"min_order": 22,
+"avg_consumption": 48,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a7cd2b77.jpg "
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"delivery_distance": 1.3,
+"rating": 4.7,
+"delivery_time": 55,
+"delivery_fee": 1.0,
+"monthly_sales": 1000,
+"min_order": 18,
+"avg_consumption": 15,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a92812e2.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"delivery_distance": 1.3,
+"rating": 4.6,
+"delivery_time": 58,
+"delivery_fee": 2.0,
+"monthly_sales": 900,
+"min_order": 15,
+"avg_consumption": 14,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097a92812e2.jpg"
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"delivery_distance": 1.9,
+"rating": 5.0,
+"delivery_time": 15,
+"delivery_fee": 0,
+"monthly_sales": 400,
+"min_order": 20,
+"avg_consumption": 21,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097aa76854c.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"delivery_distance": 1.9,
+"rating": 4.9,
+"delivery_time": 18,
+"delivery_fee": 2,
+"monthly_sales": 350,
+"min_order": 18,
+"avg_consumption": 20,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097aa76854c.jpg  "
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"delivery_distance": 4.6,
+"rating": 5.0,
+"delivery_time": 32,
+"delivery_fee": 2.0,
+"monthly_sales": 1000,
+"min_order": 20,
+"avg_consumption": 22,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097ac0502ea.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"delivery_distance": 4.6,
+"rating": 4.9,
+"delivery_time": 35,
+"delivery_fee": 2.5,
+"monthly_sales": 950,
+"min_order": 20,
+"avg_consumption": 21,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097ac0502ea.jpg "
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"delivery_distance": 1.4,
+"rating": 4.8,
+"delivery_time": 40,
+"delivery_fee": 0,
+"monthly_sales": 2000,
+"min_order": 20,
+"avg_consumption": 25,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097ad960815.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"delivery_distance": 1.4,
+"rating": 4.7,
+"delivery_time": 45,
+"delivery_fee": 1.5,
+"monthly_sales": 1900,
+"min_order": 20,
+"avg_consumption": 24,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097ad960815.jpg"
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"delivery_distance": 0.98,
+"rating": 4.8,
+"delivery_time": 50,
+"delivery_fee": 0.8,
+"monthly_sales": 1000,
+"min_order": 15,
+"avg_consumption": 16,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097aef79b95.jpg "
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"delivery_distance": 0.98,
+"rating": 4.7,
+"delivery_time": 55,
+"delivery_fee": 2.0,
+"monthly_sales": 900,
+"min_order": 15,
+"avg_consumption": 17,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097aef79b95.jpg "
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"delivery_distance": 0.223,
+"rating": 4.8,
+"delivery_time": 50,
+"delivery_fee": 0.5,
+"monthly_sales": 700,
+"min_order": 20,
+"avg_consumption": 16,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097b5759b5f.jpg"
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"delivery_distance": 0.22,
+"rating": 4.7,
+"delivery_time": 55,
+"delivery_fee": 1.8,
+"monthly_sales": 650,
+"min_order": 22,
+"avg_consumption": 17,
+"image_url": "https://youke1.picui.cn/s1/2025/11/04/69097b5759b5f.jpg"
+}
   ],
   "dishes": [
     {
@@ -3435,6 +3675,1146 @@
 "shop_name": "豪客来牛排",
 "dish_name": "招牌牛肉饭双人套餐",
 "price": 48.5
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "大份黄焖鸡+土豆+千张+金针菇+白",
+"price": 30.88
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "中份麻辣肥肠鸡+配菜+米饭",
+"price": 31.0
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "黄焖鸡+千张+豆腐泡+白菜+米饭",
+"price": 17.99
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "黄焖鸡+土豆+千张+豆腐泡+白菜+米饭",
+"price": 19.99
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "鲍汁小酥肉+配菜+米饭(微辣)",
+"price": 16.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "大份黄焖鸡+土豆+千张+金针菇+白",
+"price": 32.88
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "中份麻辣肥肠鸡+配菜+米饭",
+"price": 32.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "黄焖鸡+千张+豆腐泡+白菜+米饭",
+"price": 18.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "黄焖鸡+土豆+千张+豆腐泡+白菜+米饭",
+"price": 20.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"dish_name": "鲍汁小酥肉+配菜+米饭(微辣)",
+"price": 17.5
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【经典任选】精品汉堡diy3件套",
+"price": 24.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【品质任选】高端汉堡diy3件套",
+"price": 28.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "高端汉堡+鸡肉卷+饮品任选套餐",
+"price": 29.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "Royal汉堡+半只全鸡+百事套餐",
+"price": 27.89
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "薯妳zui美单人套餐",
+"price": 23.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "经典鸡排&辣堡单人套餐",
+"price": 26.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【品质任选】高端汉堡diy4件套",
+"price": 23.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【缤纷美味】3+1小食任选套餐",
+"price": 28.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "香辣鸡腿堡1+2任选",
+"price": 28.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【超值四件套】精品汉堡小食任选套餐",
+"price": 29.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【甄选四件套】高端汉堡小食任选套餐",
+"price": 22.9
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【经典任选】精品汉堡diy4件套",
+"price": 30.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【经典任选】精品汉堡diy3件套",
+"price": 26.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【品质任选】高端汉堡diy3件套",
+"price": 29.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "高端汉堡+鸡肉卷+饮品任选套餐",
+"price": 31.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "Royal汉堡+半只全鸡+百事套餐",
+"price": 28.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "薯妳zui美单人套餐",
+"price": 25.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "经典鸡排&辣堡单人套餐",
+"price": 27.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【品质任选】高端汉堡diy4件套",
+"price": 21.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【缤纷美味】3+1小食任选套餐",
+"price": 29.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "香辣鸡腿堡1+2任选",
+"price": 29.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【超值四件套】精品汉堡小食任选套餐",
+"price": 30.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【甄选四件套】高端汉堡小食任选套餐",
+"price": 23.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"dish_name": "【经典任选】精品汉堡diy4件套",
+"price": 28.9
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "双人：汉堡+小食+饮料",
+"price": 38.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：菠萝牛肉培根蛋堡+小食+饮料",
+"price": 26.7
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：深海鳕鱼培根蛋堡+小食+饮料",
+"price": 24.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：乐享1+1+1+1精选套餐",
+"price": 24.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "【点亮★有礼】-洋葱圈1个",
+"price": 0.0
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "【交个朋友】-黑椒鸡块1个",
+"price": 0.0
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：牛肉芝士培根蛋堡+小食+饮料",
+"price": 30.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：双层牛肉芝士培根蛋堡+小食",
+"price": 28.7
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：嘿凤梨牛肉芝士堡+小食+饮料",
+"price": 24.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "【老友福利】汉堡拍档加一片凤梨",
+"price": 0.1
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "黄金脆鸡排",
+"price": 2.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "酱酱酱 多点仅送一份",
+"price": 0.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "双人：汉堡+小食+饮料",
+"price": 40.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：菠萝牛肉培根蛋堡+小食+饮料",
+"price": 25.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：深海鳕鱼培根蛋堡+小食+饮料",
+"price": 25.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：乐享1+1+1+1精选套餐",
+"price": 25.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "【点亮★有礼】-洋葱圈1个",
+"price": 0.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "【交个朋友】-黑椒鸡块1个",
+"price": 0.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：牛肉芝士培根蛋堡+小食+饮料",
+"price": 31.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：双层牛肉芝士培根蛋堡+小食",
+"price": 27.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "单人：嘿凤梨牛肉芝士堡+小食+饮料",
+"price": 24.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "【老友福利】汉堡拍档加一片凤梨",
+"price": 0.1
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "黄金脆鸡排",
+"price": 2.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"dish_name": "酱酱酱 多点仅送一份",
+"price": 0.0
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "招牌汉堡一人食3件套",
+"price": 36.9
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "披萨一人食3件套",
+"price": 65.0
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "招牌意面炒饭一人食3件套",
+"price": 68.0
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "披萨面饭双人餐8件套",
+"price": 160.0
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "3人尊享豪华10件套",
+"price": 190.0
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "披萨汉堡超值双人餐6件套",
+"price": 87.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "招牌汉堡一人食3件套",
+"price": 35.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "披萨一人食3件套",
+"price": 64.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "招牌意面炒饭一人食3件套",
+"price": 69.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "披萨面饭双人餐8件套",
+"price": 165.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "3人尊享豪华10件套",
+"price": 195.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"dish_name": "披萨汉堡超值双人餐6件套",
+"price": 86.8
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "皮蛋瘦肉粥+蒸饺+下饭菜",
+"price": 15.8
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "生滚皮蛋瘦肉砂锅粥 500ml",
+"price": 7.4
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "青菜瘦肉粥 500ml",
+"price": 7.4
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "黑米红豆粥 500ml",
+"price": 8.28
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "养颜!红枣枸杞八宝粥 500ml",
+"price": 10.08
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "广式白粥 500ml",
+"price": 5.38
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "清香!金丝南瓜粥 500ml",
+"price": 11.78
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "招牌自选套餐",
+"price": 21.06
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "皮蛋瘦肉粥+鲜肉包+茶叶蛋",
+"price": 15.2
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "皮蛋瘦肉粥+小馒头+煎饺",
+"price": 14.28
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "鲜香!虾仁粥 500ml",
+"price": 13.78
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "田园!蔬菜粥 500ml",
+"price": 6.4
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "养胃!小米南瓜粥 500ml",
+"price": 9.08
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "皮蛋瘦肉粥+蒸饺+下饭菜",
+"price": 16.2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "生滚皮蛋瘦肉砂锅粥 500ml",
+"price": 7.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "青菜瘦肉粥 500ml",
+"price": 7.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "黑米红豆粥 500ml",
+"price": 8.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "养颜!红枣枸杞八宝粥 500ml",
+"price": 10.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "广式白粥 500ml",
+"price": 5.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "清香!金丝南瓜粥 500ml",
+"price": 12.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "招牌自选套餐",
+"price": 20.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "皮蛋瘦肉粥+鲜肉包+茶叶蛋",
+"price": 15.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "皮蛋瘦肉粥+小馒头+煎饺",
+"price": 14.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "鲜香!虾仁粥 500ml",
+"price": 14.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "田园!蔬菜粥 500ml",
+"price": 6.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"dish_name": "养胃!小米南瓜粥 500ml",
+"price": 9.5
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "减脂版鸡腿饭(卤鸡腿, 卤蛋, 较多蔬)",
+"price": 20.94
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "鸡腿饭",
+"price": 19.99
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "鸭腿饭",
+"price": 20.99
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "鸭胗套餐饭",
+"price": 19.99
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "红烧牛肉饭套餐",
+"price": 23.8
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "红烧排骨套餐饭",
+"price": 21.99
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "五香卤肉饭套餐",
+"price": 21.99
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "肉丝套餐饭",
+"price": 20.99
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "青菜肉丝汤面",
+"price": 13.9
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "青菜面",
+"price": 6.8
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "馄饨面",
+"price": 13.9
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "酸辣面",
+"price": 11.8
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "馄饨",
+"price": 7.9
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "柳叶蒸饺",
+"price": 7.9
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "花生酱拌面(易坨, 介意勿点)",
+"price": 6.8
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "葱油拌面(易坨, 介意勿点)",
+"price": 6.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "减脂版鸡腿饭(卤鸡腿, 卤蛋, 较多蔬)",
+"price": 21.94
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "鸡腿饭",
+"price": 20.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "鸭腿饭",
+"price": 21.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "鸭胗套餐饭",
+"price": 20.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "红烧牛肉饭套餐",
+"price": 24.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "红烧排骨套餐饭",
+"price": 22.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "五香卤肉饭套餐",
+"price": 22.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "肉丝套餐饭",
+"price": 21.99
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "青菜肉丝汤面",
+"price": 12.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "青菜面",
+"price": 5.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "馄饨面",
+"price": 12.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "酸辣面",
+"price": 10.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "馄饨",
+"price": 6.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "柳叶蒸饺",
+"price": 6.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "花生酱拌面(易坨, 介意勿点)",
+"price": 5.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"dish_name": "葱油拌面(易坨, 介意勿点)",
+"price": 5.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "农家一碗香盖码饭(饭菜不分离)",
+"price": 16.9
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "四季豆炒肉盖码饭(饭菜不分离)",
+"price": 20.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "招牌小炒牛肉盖码饭",
+"price": 20.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "胡萝卜肉丝盖码饭",
+"price": 21.78
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "青豆肉末盖码饭",
+"price": 21.8
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "老坛酸菜下饭鸡盖码饭",
+"price": 21.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "农家一碗香盖码饭(饭菜不分离)",
+"price": 17.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "四季豆炒肉盖码饭(饭菜不分离)",
+"price": 19.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "招牌小炒牛肉盖码饭",
+"price": 19.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "胡萝卜肉丝盖码饭",
+"price": 22.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "青豆肉末盖码饭",
+"price": 22.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"dish_name": "老坛酸菜下饭鸡盖码饭",
+"price": 22.8
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【人气新品】和牛汉堡扒蛋包饭",
+"price": 36.0
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【黑椒脆皮】现煎鸡扒蛋包饭",
+"price": 26.0
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【神之咖喱】香酥鸡排蛋包饭",
+"price": 28.0
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【风味升级】椰香咖喱炸鸡饭",
+"price": 19.5
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【超值特价】安格斯和风肥牛饭+可口",
+"price": 22.9
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【超值】焗饭&意面3选1套餐",
+"price": 31.8
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【日式咖喱】厚切猪排蛋包饭",
+"price": 30.0
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【创意菜】芝士小丸子蛋包饭",
+"price": 27.0
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "厚切猪排三明治",
+"price": 28.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【人气新品】和牛汉堡扒蛋包饭",
+"price": 37.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【黑椒脆皮】现煎鸡扒蛋包饭",
+"price": 25.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【神之咖喱】香酥鸡排蛋包饭",
+"price": 29.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【风味升级】椰香咖喱炸鸡饭",
+"price": 18.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【超值特价】安格斯和风肥牛饭+可口",
+"price": 23.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【超值】焗饭&意面3选1套餐",
+"price": 30.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【日式咖喱】厚切猪排蛋包饭",
+"price": 31.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "【创意菜】芝士小丸子蛋包饭",
+"price": 26.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"dish_name": "厚切猪排三明治",
+"price": 29.0
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "秘制肉酱&土豆泥拌饭 | 尝鲜必点",
+"price": 18.88
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "巴西烤肉&土豆泥拌饭",
+"price": 20.8
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "特色牛肉&土豆泥拌饭 | 满口生香",
+"price": 22.6
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "日式肥牛&土豆泥拌饭",
+"price": 21.4
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "外婆红烧肉&土豆泥拌饭 | 不后悔",
+"price": 21.5
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "酱香肉末茄子の土豆泥拌饭",
+"price": 20.43
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "腐竹烧牛肉の土豆泥拌饭",
+"price": 22.25
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "奥尔良鸡排肉酱土豆泥拌饭",
+"price": 21.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "秘制肉酱&土豆泥拌饭 | 尝鲜必点",
+"price": 19.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "巴西烤肉&土豆泥拌饭",
+"price": 20.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "特色牛肉&土豆泥拌饭 | 满口生香",
+"price": 23.0
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "日式肥牛&土豆泥拌饭",
+"price": 20.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "外婆红烧肉&土豆泥拌饭 | 不后悔",
+"price": 20.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "酱香肉末茄子の土豆泥拌饭",
+"price": 21.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "腐竹烧牛肉の土豆泥拌饭",
+"price": 21.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"dish_name": "奥尔良鸡排肉酱土豆泥拌饭",
+"price": 22.5
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "皮蛋瘦肉粥+猪肉玉米蒸饺5个+茶",
+"price": 16.9
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "青菜瘦肉粥+油条2根+下饭菜",
+"price": 16.8
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "香菇干贝鸡丝粥+猪肉玉米蒸饺5个",
+"price": 20.8
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "招牌！皮蛋瘦肉粥",
+"price": 9.28
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "思乡！田园蔬菜粥",
+"price": 8.18
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "精心现煮！番茄鸡蛋疙瘩汤",
+"price": 9.18
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "招牌TOP！单人畅吃3件套",
+"price": 21.8
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "人气王4件套",
+"price": 20.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "皮蛋瘦肉粥+猪肉玉米蒸饺5个+茶",
+"price": 17.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "青菜瘦肉粥+油条2根+下饭菜",
+"price": 15.9
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "香菇干贝鸡丝粥+猪肉玉米蒸饺5个",
+"price": 19.8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "招牌！皮蛋瘦肉粥",
+"price": 10.2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "思乡！田园蔬菜粥",
+"price": 8.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "精心现煮！番茄鸡蛋疙瘩汤",
+"price": 9.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "招牌TOP！单人畅吃3件套",
+"price": 20.5
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"dish_name": "人气王4件套",
+"price": 21.5
 }
   ],
   "coupons": [
@@ -4157,6 +5537,366 @@
       "shop_name": "豪客来牛排",
       "condition_amount": 80,
       "discount_amount": 16
-    }
-  ]
+    },
+    {
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"condition_amount": 15,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"condition_amount": 25,
+"discount_amount": 8
+},
+{
+"platform_name": "美团",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"condition_amount": 35,
+"discount_amount": 13
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"condition_amount": 20,
+"discount_amount": 4
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"condition_amount": 25,
+"discount_amount": 10
+},
+{
+"platform_name": "饿了么",
+"shop_name": "黄焖鸡米饭(校内可送)",
+"condition_amount": 35,
+"discount_amount": 15
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"condition_amount": 20,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"condition_amount": 25,
+"discount_amount": 5
+},
+{
+"platform_name": "美团",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"condition_amount": 35,
+"discount_amount": 13
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"condition_amount": 20,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"condition_amount": 25,
+"discount_amount": 4
+},
+{
+"platform_name": "饿了么",
+"shop_name": "香茵波克现烤汉堡(华中)",
+"condition_amount": 35,
+"discount_amount": 12
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"condition_amount": 20,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"condition_amount": 25,
+"discount_amount": 5
+},
+{
+"platform_name": "美团",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"condition_amount": 35,
+"discount_amount": 10
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"condition_amount": 15,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"condition_amount": 20,
+"discount_amount": 4
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛多堡·芝士牛肉汉堡",
+"condition_amount": 30,
+"discount_amount": 8
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"condition_amount": 20,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"condition_amount": 35,
+"discount_amount": 10
+},
+{
+"platform_name": "美团",
+"shop_name": "必胜客(华科大店)",
+"condition_amount": 50,
+"discount_amount": 15
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"condition_amount": 20,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"condition_amount": 35,
+"discount_amount": 8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "必胜客(华科大店)",
+"condition_amount": 50,
+"discount_amount": 12
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"condition_amount": 16,
+"discount_amount": 5
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"condition_amount": 35,
+"discount_amount": 13
+},
+{
+"platform_name": "美团",
+"shop_name": "粥宝宝肠粉馄饨",
+"condition_amount": 50,
+"discount_amount": 20
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"condition_amount": 15,
+"discount_amount": 4
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"condition_amount": 25,
+"discount_amount": 8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "粥宝宝肠粉馄饨",
+"condition_amount": 40,
+"discount_amount": 15
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"condition_amount": 20,
+"discount_amount": 5
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"condition_amount": 25,
+"discount_amount": 8
+},
+{
+"platform_name": "美团",
+"shop_name": "沙县小吃(光谷one39店)",
+"condition_amount": 35,
+"discount_amount": 13
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"condition_amount": 15,
+"discount_amount": 4
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"condition_amount": 20,
+"discount_amount": 6
+},
+{
+"platform_name": "饿了么",
+"shop_name": "沙县小吃(光谷one39店)",
+"condition_amount": 30,
+"discount_amount": 10
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"condition_amount": 20,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"condition_amount": 25,
+"discount_amount": 6
+},
+{
+"platform_name": "美团",
+"shop_name": "牛久哥牛肉盖饭",
+"condition_amount": 35,
+"discount_amount": 10
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"condition_amount": 20,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"condition_amount": 25,
+"discount_amount": 7
+},
+{
+"platform_name": "饿了么",
+"shop_name": "牛久哥牛肉盖饭",
+"condition_amount": 35,
+"discount_amount": 12
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"condition_amount": 20,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"condition_amount": 35,
+"discount_amount": 8
+},
+{
+"platform_name": "美团",
+"shop_name": "氧气层(华科校内店)",
+"condition_amount": 50,
+"discount_amount": 15
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"condition_amount": 20,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"condition_amount": 35,
+"discount_amount": 10
+},
+{
+"platform_name": "饿了么",
+"shop_name": "氧气层(华科校内店)",
+"condition_amount": 50,
+"discount_amount": 12
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"condition_amount": 15,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"condition_amount": 25,
+"discount_amount": 6
+},
+{
+"platform_name": "美团",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"condition_amount": 35,
+"discount_amount": 10
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"condition_amount": 15,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"condition_amount": 25,
+"discount_amount": 8
+},
+{
+"platform_name": "饿了么",
+"shop_name": "泥好时光·土豆泥肉酱拌饭",
+"condition_amount": 35,
+"discount_amount": 12
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"condition_amount": 20,
+"discount_amount": 3
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"condition_amount": 25,
+"discount_amount": 5
+},
+{
+"platform_name": "美团",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"condition_amount": 35,
+"discount_amount": 10
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"condition_amount": 15,
+"discount_amount": 2
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"condition_amount": 25,
+"discount_amount": 7
+},
+{
+"platform_name": "饿了么",
+"shop_name": "好粥稻·肠粉·馄饨·饺子(华科)",
+"condition_amount": 30,
+"discount_amount": 12
 }
+  ]
+}  
